@@ -61,6 +61,7 @@ canvas{display:block;}
 ::selection{background:rgba(216,178,108,.4);color:#24150c;}
 :focus-visible{outline:none;box-shadow:var(--focus);}
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;}
+
 /* 共用 */
 .btn{
   --btn-bg:transparent;
@@ -94,6 +95,7 @@ canvas{display:block;}
 .kicker::after{content:"";width:26px;height:1px;background:linear-gradient(90deg,var(--gold),transparent);}
 .kicker.left::after{display:none;}
 .kicker.left::before{width:32px;background:var(--gold);}
+
 /* ============================================================
    首页
    ============================================================ */
@@ -143,6 +145,7 @@ canvas{display:block;}
 .home-navmeta .nav-vol:hover{background:rgba(216,178,108,.08);color:var(--gold-light);}
 .home-navmeta .nav-vol.muted{color:var(--red-bright);}
 .hud-btn.muted .sound-wave,.nav-vol.muted .sound-wave{display:none;}
+
 .home-main{
   position:relative;z-index:4;max-width:1320px;margin:0 auto;padding:18px 36px 50px;
   min-height:calc(100dvh - 92px);display:grid;grid-template-columns:minmax(0,1.05fr) minmax(380px,.78fr);
@@ -181,6 +184,7 @@ canvas{display:block;}
   background:rgba(0,0,0,.16);color:var(--muted-2);font-size:10.5px;line-height:1.85;letter-spacing:.035em;
 }
 .disclaimer b{color:var(--muted);font-weight:600;}
+
 /* 首页地图海报 */
 .home-poster-wrap{position:relative;display:flex;justify-content:center;align-items:center;}
 .poster-shadow{
@@ -257,6 +261,7 @@ canvas{display:block;}
   font-size:9px;letter-spacing:.15em;pointer-events:none;
 }
 .home-footer span:last-child{color:rgba(170,151,129,.3);}
+
 /* ============================================================
    游戏主界面
    ============================================================ */
@@ -302,6 +307,7 @@ canvas{display:block;}
 .obj-chip.done b{color:rgba(211,224,190,.9);}
 .obj-chip.mini{color:rgba(239,217,164,.4);}
 .obj-chip .tick{color:#a9c290;}
+
 /* HUD */
 .hud{display:flex;flex-direction:column;align-items:flex-end;gap:7px;pointer-events:auto;min-width:0;}
 .resources{
@@ -354,6 +360,7 @@ canvas{display:block;}
 .volume-slider::-webkit-slider-thumb{-webkit-appearance:none;width:9px;height:9px;border-radius:50%;background:var(--gold-light);border:0;box-shadow:0 0 0 2px rgba(0,0,0,.25);}
 .volume-slider::-moz-range-thumb{width:9px;height:9px;border-radius:50%;background:var(--gold-light);border:0;}
 .vol-num{font-size:8px;color:rgba(216,196,158,.4);width:18px;text-align:right;font-variant-numeric:tabular-nums;}
+
 .map-hint{
   position:absolute;z-index:15;left:20px;bottom:20px;display:flex;align-items:center;gap:9px;
   padding:8px 11px;border:1px solid rgba(216,178,108,.17);background:rgba(22,12,9,.62);
@@ -370,6 +377,7 @@ canvas{display:block;}
 .near-hint::before,.near-hint::after{content:"";position:absolute;top:50%;width:20px;height:1px;background:rgba(216,178,108,.35);}
 .near-hint::before{right:100%;}
 .near-hint::after{left:100%;}
+
 /* 移动端方向键 */
 .mobile-pad{
   display:none;flex:0 0 auto;padding:8px 18px calc(8px + env(safe-area-inset-bottom));
@@ -388,6 +396,7 @@ canvas{display:block;}
 .dpad .right{grid-column:3;grid-row:2;}
 .mobile-pad-note{text-align:right;color:rgba(235,220,192,.35);font-size:9px;line-height:1.9;letter-spacing:.08em;max-width:160px;}
 .mobile-pad-note b{display:block;color:rgba(239,217,164,.6);font-family:var(--serif);font-size:13px;font-weight:500;letter-spacing:.12em;}
+
 /* toast */
 .toast-stack{position:fixed;z-index:110;left:50%;top:88px;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:7px;pointer-events:none;width:min(92vw,560px);}
 .toast{
@@ -400,6 +409,7 @@ canvas{display:block;}
 .toast.leaving{animation:toastOut .35s ease forwards;}
 @keyframes toastIn{from{opacity:0;transform:translateY(-8px);}to{opacity:1;transform:none;}}
 @keyframes toastOut{to{opacity:0;transform:translateY(-8px);}}
+
 /* ============================================================
    通用弹窗
    ============================================================ */
@@ -434,6 +444,7 @@ canvas{display:block;}
 .panel-close:hover{color:var(--gold-light);border-color:var(--line-strong);background:rgba(216,178,108,.07);}
 .panel-body{padding:24px 26px;position:relative;z-index:1;}
 .panel-foot{padding:0 26px 24px;position:relative;z-index:1;display:flex;justify-content:flex-end;gap:10px;flex-wrap:wrap;}
+
 /* 问答 */
 .qa-panel{width:min(800px,100%);background:linear-gradient(145deg,#22130f,#100a08 58%,#1d100c);}
 .qa-panel:focus,.qa-panel:focus-visible{outline:none;box-shadow:0 40px 100px rgba(0,0,0,.65),inset 0 0 80px rgba(0,0,0,.22);}
@@ -493,6 +504,7 @@ canvas{display:block;}
 .delta.down .d-val{color:#ff8b7d;}
 .delta.zero .d-val{color:rgba(235,220,192,.35);}
 .qa-actions{display:flex;justify-content:flex-end;gap:9px;margin-top:16px;}
+
 /* 通用确认 / 暂停 */
 .small-panel{width:min(500px,100%);}
 .small-panel .panel-head{padding-bottom:15px;}
@@ -508,6 +520,7 @@ canvas{display:block;}
 .pause-volume-label{font-size:9px;letter-spacing:.12em;color:rgba(235,220,192,.5);flex:0 0 auto;}
 .pause-slider{flex:1;width:auto;max-width:180px;}
 .pause-volume .btn-quiet{min-height:28px;padding:4px 8px;margin-left:auto;}
+
 /* 帮助 */
 .help-panel{width:min(880px,100%);}
 .help-body{display:grid;grid-template-columns:1.1fr .9fr;gap:26px;}
@@ -521,6 +534,7 @@ canvas{display:block;}
 .help-keys{display:flex;flex-wrap:wrap;gap:5px;margin:7px 0 14px;}
 .kbd{display:inline-flex;align-items:center;justify-content:center;min-width:25px;height:23px;padding:0 7px;border:1px solid rgba(216,178,108,.28);border-bottom-width:2px;background:rgba(0,0,0,.2);color:rgba(239,217,164,.75);font-size:9px;letter-spacing:.03em;}
 .help-tip{margin-top:13px;padding:10px 12px;border-left:2px solid rgba(155,28,23,.6);background:rgba(0,0,0,.17);color:rgba(235,220,192,.42);font-size:10px;line-height:1.8;}
+
 /* ============================================================
    史料展览馆
    ============================================================ */
@@ -568,6 +582,7 @@ canvas{display:block;}
 .archive-empty .lock-big{font-family:var(--serif);font-size:46px;color:rgba(216,178,108,.2);margin-bottom:8px;}
 .archive-foot{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:13px 20px;border-top:1px solid rgba(216,178,108,.13);background:rgba(0,0,0,.14);position:relative;z-index:1;}
 .archive-foot .archive-tip{color:rgba(235,220,192,.3);font-size:9px;letter-spacing:.05em;}
+
 /* ============================================================
    小游戏
    ============================================================ */
@@ -645,6 +660,7 @@ canvas{display:block;}
 .mini-result-actions{display:flex;justify-content:flex-end;margin-top:15px;}
 .hit-flash{position:absolute;inset:0;z-index:4;pointer-events:none;background:radial-gradient(circle,transparent 20%,rgba(170,20,12,.32));animation:hitFlash .4s ease both;}
 @keyframes hitFlash{from{opacity:1;}to{opacity:0;}}
+
 /* ============================================================
    结局字幕
    ============================================================ */
@@ -667,6 +683,7 @@ canvas{display:block;}
 }
 .ending-skip:hover{color:rgba(239,217,164,.7);border-color:rgba(216,178,108,.3);}
 .ending-foot{position:absolute;left:0;right:0;bottom:18px;text-align:center;color:rgba(216,205,183,.18);font-size:8px;letter-spacing:.22em;}
+
 /* ============================================================
    通关评价
    ============================================================ */
@@ -696,6 +713,7 @@ canvas{display:block;}
 .fa-item .fa-name{flex:1;color:rgba(239,229,209,.64);font-size:10px;letter-spacing:.03em;}
 .fa-item .fa-mark{color:var(--gold);font-size:9px;}
 .finale-actions{display:flex;justify-content:flex-end;gap:10px;padding:0 30px 26px;position:relative;z-index:1;flex-wrap:wrap;}
+
 /* ============================================================
    自适应
    ============================================================ */
@@ -840,14 +858,17 @@ canvas{display:block;}
   *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;}
   .memorial-scroll{animation-duration:1ms!important;}
 }
+
 </style>
 </head>
 <body>
+
 <!-- ============================ 首页 ============================ -->
 <section id="homeScreen" aria-label="长征沙盘推演首页">
   <div class="home-route-bg" aria-hidden="true"></div>
   <div class="home-grain" aria-hidden="true"></div>
   <div class="home-vignette" aria-hidden="true"></div>
+
   <header class="home-nav">
     <div class="home-brand">
       <div class="brand-seal" aria-hidden="true">长</div>
@@ -864,6 +885,7 @@ canvas{display:block;}
       </button>
     </div>
   </header>
+
   <main class="home-main">
     <div class="hero-copy">
       <div class="hero-kicker kicker left">1934 — 1936 · 二万五千里</div>
@@ -907,6 +929,7 @@ canvas{display:block;}
         <b>历史情境说明：</b>本作品为历史情境推演，长征真实历史是复杂条件下的伟大抉择，本作品仅用于历史思辨教育，不等同真实历史。游戏中的资源与选择结果均为教学化模拟，不构成对历史人物与事件的完整评价。
       </p>
     </div>
+
     <div class="home-poster-wrap" aria-hidden="true">
       <div class="poster-shadow"></div>
       <div class="map-poster">
@@ -946,17 +969,20 @@ canvas{display:block;}
       <div class="poster-caption">从于都河到会宁城 · 一条用脚步写下的路线</div>
     </div>
   </main>
+
   <footer class="home-footer">
     <span>长征沙盘推演 · 红色历史情境推演教育作品</span>
     <span>所有音画均为程序实时生成 · 无外部素材</span>
   </footer>
 </section>
+
 <!-- ============================ 游戏 ============================ -->
 <section id="gameScreen" class="game-screen" hidden aria-label="长征沙盘">
   <div class="stage" id="stage">
     <canvas id="gameCanvas" aria-label="长征沙盘地图">你的浏览器需要支持 Canvas 才能运行本作品。</canvas>
     <div class="game-grain" aria-hidden="true"></div>
     <div class="stage-vignette" aria-hidden="true"></div>
+
     <div class="top-overlay">
       <div class="chapter-block">
         <div class="chapter-kicker">
@@ -969,6 +995,7 @@ canvas{display:block;}
         <div class="chapter-route" id="chapterRoute" aria-label="关卡进度"></div>
         <div class="objective-chips" id="objectiveChips"></div>
       </div>
+
       <div class="hud" aria-label="资源与系统">
         <div class="resources">
           <div class="res">
@@ -1007,9 +1034,11 @@ canvas{display:block;}
         </div>
       </div>
     </div>
+
     <div class="map-hint"><span class="key">W</span><span class="key">A</span><span class="key">S</span><span class="key">D</span><span>移动沙盘 · 触碰光点触发历史事件</span></div>
     <div class="near-hint" id="nearHint">抵达触发事件</div>
   </div>
+
   <div class="mobile-pad" id="mobilePad" aria-label="移动方向键">
     <div class="dpad">
       <button class="up" type="button" data-dir="up" aria-label="向上">▲</button>
@@ -1020,6 +1049,7 @@ canvas{display:block;}
     <div class="mobile-pad-note"><b>走向历史坐标</b>触碰浅色圆圈<br>完成主线与支线，解锁史料</div>
   </div>
 </section>
+
 <!-- ============================ 结局 ============================ -->
 <section id="endingScreen" hidden aria-label="长征缅怀字幕">
   <div class="ending-grain" aria-hidden="true"></div>
@@ -1038,9 +1068,11 @@ canvas{display:block;}
   <button class="ending-skip" id="endingSkip" type="button">跳过字幕</button>
   <div class="ending-foot">1934 — 1936 · 二万五千里</div>
 </section>
+
 <!-- ============================ 弹窗根 ============================ -->
-<div id="overlayRoot" hidden></div>
+<div id="overlayRoot" class="overlay" hidden></div>
 <div class="toast-stack" id="toastStack" aria-live="polite" aria-atomic="false"></div>
+
 <script>
 (function(){
 'use strict';
@@ -1052,11 +1084,13 @@ const RESOURCE_FLOOR = 5;
 const SAVE_KEY = 'changzheng_sandbox_v3_save';
 const SETTINGS_KEY = 'changzheng_sandbox_v3_settings';
 const SAVE_VERSION = 3;
+
 const RESOURCE_META = {
   troops: { name: '兵员', unit: '人', icon: '兵', short: '兵' },
   grain: { name: '粮食', unit: '担', icon: '粮', short: '粮' },
   ammo: { name: '弹药', unit: '箱', icon: '弹', short: '弹' }
 };
+
 const LEVELS = [
   {
     id: 'ruijin',
@@ -1144,6 +1178,7 @@ const LEVELS = [
       spirit: '军民鱼水、纪律如铁、信任与牺牲。一张借条背后，是制度的约束，也是政治信用与人民情感的双重抵押。'
     }
   },
+
   {
     id: 'xiangjiang',
     no: 2,
@@ -1239,6 +1274,7 @@ const LEVELS = [
       spirit: '向死而生、顾全大局、忠诚担当。湘江的水记住了一个道理：错误的路线会让最勇敢的人付出最大的代价。'
     }
   },
+
   {
     id: 'zunyi',
     no: 3,
@@ -1325,6 +1361,7 @@ const LEVELS = [
       spirit: '实事求是、独立自主、自我纠错、民主团结。真正的转折，往往从承认问题开始。'
     }
   },
+
   {
     id: 'luding',
     no: 4,
@@ -1420,6 +1457,7 @@ const LEVELS = [
       spirit: '一不怕苦、二不怕死；英勇顽强、使命必达。铁索之上，没有退路，只有向前。'
     }
   },
+
   {
     id: 'jiajinshan',
     no: 5,
@@ -1515,6 +1553,7 @@ const LEVELS = [
       spirit: '革命英雄主义、互助友爱、坚韧不拔。雪山无言，却记住了那些互相搀扶的背影。'
     }
   },
+
   {
     id: 'caodi',
     no: 6,
@@ -1610,6 +1649,7 @@ const LEVELS = [
       spirit: '理想信念、同甘共苦、团结互助、革命乐观主义。草地没有路，队伍用信念走出了路。'
     }
   },
+
   {
     id: 'huining',
     no: 7,
@@ -1697,9 +1737,11 @@ const LEVELS = [
     }
   }
 ];
+
 const LEVEL_BY_ID = Object.fromEntries(LEVELS.map(level => [level.id, level]));
 const ARTIFACTS = LEVELS.map(level => level.artifact);
 const ARTIFACT_BY_ID = Object.fromEntries(ARTIFACTS.map(a => [a.id, a]));
+
 // 三选一在界面上的轮换：让资源回报较优的方案均匀分布在 A/B/C
 const QA_OPTION_SHIFTS = {
   'ruijin-main': 0,
@@ -1717,6 +1759,7 @@ const QA_OPTION_SHIFTS = {
   'huining-main': 0,
   'huining-side': 0
 };
+
 const RATING = {
   excellent: {
     label: '优秀',
@@ -1737,6 +1780,7 @@ const RATING = {
     detail: '资源几近枯竭，前行每一步都伴随着代价。历史中的红军，正是在这样的绝境里，用信念与生命走出了长征。'
   }
 };
+
 const ENDING_LINES = [
   '你走完了这条长征路。',
   '有很多战士，永远留在了路上。',
@@ -1747,6 +1791,8 @@ const ENDING_LINES = [
   '记住这些平凡而勇敢的人。',
   '——长征推演结束'
 ];
+
+
 /* ============================================================
    程序化音频：Web Audio API 实时合成，无外部音频资源
    ============================================================ */
@@ -1769,6 +1815,7 @@ class AudioEngine {
     this.sceneGain = 0.32;
     this._lastTick = 0;
   }
+
   ensure() {
     if (this.ctx) {
       if (this.ctx.state === 'suspended') this.ctx.resume().catch(() => {});
@@ -1789,12 +1836,15 @@ class AudioEngine {
       comp.release.value = 0.3;
       this.master.connect(comp);
       comp.connect(c.destination);
+
       this.musicBus = c.createGain();
       this.musicBus.gain.value = 0.0001;
       this.musicBus.connect(this.master);
+
       this.sfxBus = c.createGain();
       this.sfxBus.gain.value = 0.55;
       this.sfxBus.connect(this.master);
+
       this.delay = c.createDelay(1.2);
       this.delay.delayTime.value = 0.36;
       this.delayWet = c.createGain();
@@ -1810,6 +1860,7 @@ class AudioEngine {
       feedback.connect(this.delay);
       delayFilter.connect(this.delayWet);
       this.delayWet.connect(this.master);
+
       this.noiseBuffer = this.makeNoiseBuffer(c);
       this.nextNoteTime = c.currentTime + 0.1;
       this.startScheduler();
@@ -1822,6 +1873,7 @@ class AudioEngine {
       return false;
     }
   }
+
   makeNoiseBuffer(ctx) {
     const len = Math.floor(ctx.sampleRate * 1.2);
     const buffer = ctx.createBuffer(1, len, ctx.sampleRate);
@@ -1834,11 +1886,14 @@ class AudioEngine {
     }
     return buffer;
   }
+
   midi(n) { return 440 * Math.pow(2, (n - 69) / 12); }
+
   startScheduler() {
     if (this.timer) return;
     this.timer = setInterval(() => this.schedule(), 110);
   }
+
   schedule() {
     if (!this.ctx || this.ctx.state !== 'running') return;
     const ahead = 0.55;
@@ -1849,6 +1904,7 @@ class AudioEngine {
       this.step++;
     }
   }
+
   stepDuration() {
     switch (this.scene) {
       case 'mini': return 0.62;
@@ -1858,6 +1914,7 @@ class AudioEngine {
       default: return 1.55;
     }
   }
+
   scheduleStep(step, when) {
     const s = step % 16;
     const scene = this.scene;
@@ -1923,6 +1980,7 @@ class AudioEngine {
       if (s === 14) this.bell(this.midi(62), when, 0.014);
     }
   }
+
   applySceneGain(immediate = false) {
     if (!this.ctx || !this.musicBus) return;
     const targets = { home: 0.28, map: 0.34, qa: 0.25, mini: 0.3, ending: 0.3 };
@@ -1937,6 +1995,7 @@ class AudioEngine {
       g.exponentialRampToValueAtTime(Math.max(target, 0.0001), now + 0.9);
     }
   }
+
   setScene(scene) {
     if (this.scene === scene) {
       this.ensure();
@@ -1948,6 +2007,7 @@ class AudioEngine {
     this.nextNoteTime = this.ctx.currentTime + 0.08;
     this.applySceneGain(false);
   }
+
   setVolume(value) {
     this.volume = Math.max(0, Math.min(1, value));
     if (this.ctx && this.master) {
@@ -1957,6 +2017,7 @@ class AudioEngine {
     }
     this.applySceneGain(false);
   }
+
   setMuted(muted) {
     this.muted = !!muted;
     if (this.ctx && this.master) {
@@ -1966,6 +2027,7 @@ class AudioEngine {
     }
     this.applySceneGain(false);
   }
+
   /* ---------- 合成器基础 ---------- */
   env(node, when, attack, hold, release, peak) {
     const g = node.gain;
@@ -1975,6 +2037,7 @@ class AudioEngine {
     g.setValueAtTime(Math.max(peak, 0.0001), when + attack + hold);
     g.exponentialRampToValueAtTime(0.0001, when + attack + hold + release);
   }
+
   tone(freq, when, dur, gain, type = 'sine', dest = this.sfxBus, endFreq = null) {
     if (!this.ctx || !dest) return;
     const o = this.ctx.createOscillator();
@@ -1988,6 +2051,7 @@ class AudioEngine {
     o.start(when);
     o.stop(when + dur + 0.08);
   }
+
   pluck(freq, when, gain = 0.04) {
     if (!this.ctx) return;
     const o = this.ctx.createOscillator();
@@ -2007,6 +2071,7 @@ class AudioEngine {
     o.start(when);
     o.stop(when + 1.65);
   }
+
   pad(notes, when, dur, gain = 0.028) {
     if (!this.ctx) return;
     notes.forEach((midi, i) => {
@@ -2030,6 +2095,7 @@ class AudioEngine {
       o.stop(when + dur + 0.1);
     });
   }
+
   bell(freq, when, gain = 0.03) {
     if (!this.ctx) return;
     [1, 2.02, 3.01].forEach((mult, i) => {
@@ -2047,6 +2113,7 @@ class AudioEngine {
       o.stop(when + 2.7);
     });
   }
+
   drum(when, gain = 0.08) {
     if (!this.ctx) return;
     const o = this.ctx.createOscillator();
@@ -2061,6 +2128,7 @@ class AudioEngine {
     o.start(when);
     o.stop(when + 0.55);
   }
+
   horn(freq, when, dur = 5, gain = 0.016) {
     if (!this.ctx) return;
     [0, -12].forEach((offset, index) => {
@@ -2085,6 +2153,7 @@ class AudioEngine {
       o.stop(when + dur + 0.15);
     });
   }
+
   wind(when, dur, gain = 0.01) {
     if (!this.ctx || !this.noiseBuffer) return;
     const src = this.ctx.createBufferSource();
@@ -2106,6 +2175,7 @@ class AudioEngine {
     src.start(when, Math.random() * 0.2);
     src.stop(when + dur + 0.05);
   }
+
   noise(when, dur, gain, freq = 1200, type = 'bandpass') {
     if (!this.ctx || !this.noiseBuffer) return;
     const src = this.ctx.createBufferSource();
@@ -2122,6 +2192,7 @@ class AudioEngine {
     g.connect(this.sfxBus);
     src.start(when, Math.random() * 0.3, dur + 0.03);
   }
+
   sfx(name) {
     if (!this.ensure()) return;
     const now = this.ctx.currentTime + 0.005;
@@ -2190,6 +2261,7 @@ class AudioEngine {
         this.tone(600, now, 0.05, 0.02, 'sine');
     }
   }
+
   bellSfx(freq, when) {
     if (!this.ctx) return;
     const o = this.ctx.createOscillator();
@@ -2205,7 +2277,10 @@ class AudioEngine {
     o.stop(when + 1.9);
   }
 }
+
 const audio = new AudioEngine();
+
+
 /* ============================================================
    核心：状态、存档、界面、问答、弹窗
    ============================================================ */
@@ -2213,6 +2288,7 @@ const $ = (selector, root = document) => root.querySelector(selector);
 const $$ = (selector, root = document) => Array.from(root.querySelectorAll(selector));
 const clamp = (n, min, max) => Math.max(min, Math.min(max, n));
 const clone = obj => JSON.parse(JSON.stringify(obj));
+
 let state = createState();
 let settings = loadSettings();
 let savedGame = loadSave();
@@ -2227,6 +2303,7 @@ let endingActive = false;
 let endingFinished = false;
 let archiveFromFinale = false;
 let finaleVisible = false;
+
 function createState() {
   const progress = {};
   for (const level of LEVELS) progress[level.id] = { main: false, side: false, mini: false };
@@ -2241,13 +2318,16 @@ function createState() {
     finished: false
   };
 }
+
 function getLevel(index = state.levelIndex) {
   return LEVELS[clamp(index, 0, LEVELS.length - 1)];
 }
+
 function getProgress(level = getLevel()) {
   if (!state.progress[level.id]) state.progress[level.id] = { main: false, side: false, mini: false };
   return state.progress[level.id];
 }
+
 function loadSettings() {
   const defaults = { volume: 0.65, muted: false };
   try {
@@ -2262,11 +2342,13 @@ function loadSettings() {
     return defaults;
   }
 }
+
 function saveSettings() {
   try {
     localStorage.setItem(SETTINGS_KEY, JSON.stringify(settings));
   } catch (err) { /* 本地存储不可用时，游戏仍可继续 */ }
 }
+
 function loadSave() {
   try {
     const raw = localStorage.getItem(SAVE_KEY);
@@ -2296,6 +2378,7 @@ function loadSave() {
     return null;
   }
 }
+
 function saveGame() {
   if (!state.started) return;
   try {
@@ -2313,10 +2396,12 @@ function saveGame() {
     savedGame = clone(payload);
   } catch (err) { /* 忽略隐私模式或容量限制 */ }
 }
+
 function persistSettingsToAudio() {
   audio.setVolume(settings.volume);
   audio.setMuted(settings.muted);
 }
+
 function syncAudioUI() {
   const percent = Math.round(settings.volume * 100);
   const slider = $('#volumeSlider');
@@ -2342,6 +2427,7 @@ function syncAudioUI() {
     btn.title = settings.muted ? '开启声音' : '静音';
   });
 }
+
 function toggleMute() {
   settings.muted = !settings.muted;
   audio.ensure();
@@ -2349,6 +2435,7 @@ function toggleMute() {
   syncAudioUI();
   saveSettings();
 }
+
 function setVolumeFromInput(value) {
   settings.volume = clamp(value / 100, 0, 1);
   if (settings.muted && settings.volume > 0) {
@@ -2360,6 +2447,7 @@ function setVolumeFromInput(value) {
   syncAudioUI();
   saveSettings();
 }
+
 function initAudioOnGesture() {
   if (audioUnlocked) return;
   audioUnlocked = audio.ensure();
@@ -2369,6 +2457,7 @@ function initAudioOnGesture() {
     audio.setScene(state.screen === 'home' ? 'home' : 'map');
   }
 }
+
 /* ---------------- 通用 UI ---------------- */
 function toast(message, tone = '') {
   const stack = $('#toastStack');
@@ -2383,10 +2472,12 @@ function toast(message, tone = '') {
   }, 3200);
   while (stack.children.length > 3) stack.firstElementChild.remove();
 }
+
 function syncBodyLock() {
   const shouldLock = state.screen !== 'home' || !!overlayKind;
   document.body.classList.toggle('is-locked', shouldLock);
 }
+
 function showOverlay(html, kind, options = {}) {
   const root = $('#overlayRoot');
   if (!root) return null;
@@ -2403,6 +2494,7 @@ function showOverlay(html, kind, options = {}) {
   });
   return root;
 }
+
 function closeOverlay(options = {}) {
   const root = $('#overlayRoot');
   const runAction = options.runCloseAction === true ? overlayCloseAction : null;
@@ -2419,10 +2511,12 @@ function closeOverlay(options = {}) {
   }
   if (state.screen === 'game' && !miniState) audio.setScene('map');
 }
+
 function hideNearHint() {
   const hint = $('#nearHint');
   if (hint) hint.classList.remove('show');
 }
+
 function updateHomeUI() {
   const continueBtn = $('#continueBtn');
   const clearBtn = $('#clearSaveBtn');
@@ -2447,6 +2541,7 @@ function updateHomeUI() {
     if (label) label.textContent = '开始推演';
   }
 }
+
 function showHome() {
   state.screen = 'home';
   miniState = null;
@@ -2460,6 +2555,7 @@ function showHome() {
   syncBodyLock();
   audio.setScene('home');
 }
+
 function beginNewGame() {
   initAudioOnGesture();
   state = createState();
@@ -2476,6 +2572,7 @@ function beginNewGame() {
   enterLevel(0, { silent: true });
   toast('长征沙盘已展开 · 从瑞金出发');
 }
+
 function requestNewGame() {
   if (loadSave()) {
     confirmDialog({
@@ -2488,6 +2585,7 @@ function requestNewGame() {
     beginNewGame();
   }
 }
+
 function continueGame() {
   const save = loadSave();
   if (!save) {
@@ -2511,6 +2609,7 @@ function continueGame() {
     toast(`继续推演 · 第 ${getLevel().no} 关 ${getLevel().name}`);
   }
 }
+
 /* ---------------- HUD ---------------- */
 function updateHUD() {
   if (!state.started) return;
@@ -2521,6 +2620,7 @@ function updateHUD() {
   $('#chapterName').textContent = lvl.name;
   $('#chapterDateShort').textContent = lvl.region;
   $('#chapterDesc').textContent = lvl.desc;
+
   const route = $('#chapterRoute');
   route.innerHTML = LEVELS.map((level, index) => {
     const done = index < state.levelIndex || (level.id === lvl.id && state.unlocked.includes(level.artifact.id));
@@ -2528,6 +2628,7 @@ function updateHUD() {
     return `<span class="r-dot ${done ? 'done' : ''} ${now ? 'now' : ''}">${level.name}</span>` +
       (index < LEVELS.length - 1 ? '<span class="r-line"></span>' : '');
   }).join('');
+
   const chips = [];
   chips.push(`<span class="obj-chip ${progress.main ? 'done' : ''}"><b>主线</b>${progress.main ? '<span class="tick">✓</span>' : '○'}</span>`);
   chips.push(`<span class="obj-chip ${progress.side ? 'done' : ''}"><b>支线</b>${progress.side ? '<span class="tick">✓</span>' : '○'}</span>`);
@@ -2536,12 +2637,14 @@ function updateHUD() {
   }
   chips.push(`<span class="obj-chip"><b>史料</b>${state.unlocked.length}/7</span>`);
   $('#objectiveChips').innerHTML = chips.join('');
+
   for (const key of Object.keys(RESOURCE_META)) {
     const valueEl = $(`[data-res-val="${key}"]`);
     if (valueEl) valueEl.textContent = String(state.resources[key]);
   }
   syncAudioUI();
 }
+
 function flashResource(key, delta) {
   if (!delta) return;
   const el = $(`[data-res-val="${key}"]`);
@@ -2551,6 +2654,7 @@ function flashResource(key, delta) {
   el.classList.add(delta > 0 ? 'flash-up' : 'flash-down');
   setTimeout(() => el.classList.remove('flash-up', 'flash-down'), 800);
 }
+
 function applyEffects(effects, options = {}) {
   const actual = { troops: 0, grain: 0, ammo: 0 };
   for (const key of Object.keys(RESOURCE_META)) {
@@ -2568,6 +2672,7 @@ function applyEffects(effects, options = {}) {
   if (options.save !== false) saveGame();
   return actual;
 }
+
 function getActualDelta(effects) {
   const actual = { troops: 0, grain: 0, ammo: 0 };
   for (const key of Object.keys(RESOURCE_META)) {
@@ -2577,6 +2682,7 @@ function getActualDelta(effects) {
   }
   return actual;
 }
+
 function renderDeltaChips(actual, extraClass = '') {
   return `<div class="delta-row ${extraClass}">` + Object.keys(RESOURCE_META).map(key => {
     const value = actual[key] || 0;
@@ -2585,6 +2691,7 @@ function renderDeltaChips(actual, extraClass = '') {
     return `<span class="delta ${tone}"><span class="d-name">${RESOURCE_META[key].name}</span><span class="d-val">${sign}${value}</span></span>`;
   }).join('') + '</div>';
 }
+
 /* ---------------- 问答 ---------------- */
 function openQA(point, kind) {
   if (overlayKind) return;
@@ -2628,6 +2735,7 @@ function openQA(point, kind) {
     </article>
   `;
   showOverlay(html, 'qa', { focus: '.qa-panel' });
+
   let resolved = false;
   const skip = $('#qaSkip');
   if (skip) {
@@ -2643,6 +2751,7 @@ function openQA(point, kind) {
       checkLevelCompletion();
     });
   }
+
   $$('.qa-option', $('#overlayRoot')).forEach(btn => {
     btn.addEventListener('click', () => {
       if (resolved) return;
@@ -2683,6 +2792,7 @@ function openQA(point, kind) {
     });
   });
 }
+
 /* ---------------- 确认 / 暂停 / 帮助 ---------------- */
 function confirmDialog(options) {
   const html = `
@@ -2709,6 +2819,7 @@ function confirmDialog(options) {
     if (options.onConfirm) options.onConfirm();
   });
 }
+
 function openPause() {
   if (state.screen !== 'game' || overlayKind) return;
   hideNearHint();
@@ -2773,6 +2884,7 @@ function openPause() {
   });
   syncAudioUI();
 }
+
 function openHelp() {
   if (overlayKind) return;
   initAudioOnGesture();
@@ -2819,6 +2931,7 @@ function openHelp() {
   $('#helpClose').addEventListener('click', close);
   $('#helpOk').addEventListener('click', close);
 }
+
 function requestRestartLevel() {
   if (state.screen !== 'game') return;
   const lvl = getLevel();
@@ -2829,6 +2942,7 @@ function requestRestartLevel() {
     onConfirm: () => restartLevel()
   });
 }
+
 function restartLevel() {
   const lvl = getLevel();
   state.resources = clone(state.entryResources || levelStartResources);
@@ -2842,6 +2956,7 @@ function restartLevel() {
   audio.setScene('map');
   toast(`已重开第 ${lvl.no} 关 · ${lvl.name}`);
 }
+
 /* ---------------- 关卡流 ---------------- */
 function enterLevel(index, options = {}) {
   state.levelIndex = clamp(index, 0, LEVELS.length - 1);
@@ -2878,6 +2993,7 @@ function enterLevel(index, options = {}) {
     }
   }, 850);
 }
+
 function advanceLevel() {
   closeOverlay();
   const next = state.levelIndex + 1;
@@ -2888,6 +3004,7 @@ function advanceLevel() {
     startEnding();
   }
 }
+
 function checkLevelCompletion() {
   const lvl = getLevel();
   const p = getProgress(lvl);
@@ -2902,6 +3019,7 @@ function checkLevelCompletion() {
   }, 300);
   return true;
 }
+
 function openArtifactUnlock(lvl) {
   if (overlayKind) return;
   const isFinal = state.levelIndex === LEVELS.length - 1;
@@ -2949,11 +3067,14 @@ function openArtifactUnlock(lvl) {
     }
   });
 }
+
+
 /* ============================================================
    沙盘地图：移动、碰撞、绘制
    ============================================================ */
 const CANVAS_SERIF = '"STSong","Songti SC","SimSun","Noto Serif SC",serif';
 const CANVAS_SANS = '"Microsoft YaHei","PingFang SC","Noto Sans SC",sans-serif';
+
 const MAP_PALETTES = {
   ruijin: {
     base: '#d7cea8', base2: '#c8bf94', ink: '#50452f', accent: '#849265',
@@ -2984,6 +3105,7 @@ const MAP_PALETTES = {
     accent2: '#b59a6b', water: '#77908c', road: '#b08d5d', paper: '#ecdfc2', depth: '#5a452b'
   }
 };
+
 const mapRuntime = {
   canvas: null,
   ctx: null,
@@ -3001,6 +3123,7 @@ const mapRuntime = {
   moving: false,
   bob: 0
 };
+
 function mulberry32(seed) {
   let a = seed >>> 0;
   return function () {
@@ -3011,6 +3134,7 @@ function mulberry32(seed) {
     return ((t ^ t >>> 14) >>> 0) / 4294967296;
   };
 }
+
 function resetMapForLevel(level) {
   mapRuntime.level = level;
   mapRuntime.player = { x: level.start.x, y: level.start.y };
@@ -3025,6 +3149,7 @@ function resetMapForLevel(level) {
     prepareMapBackground();
   }
 }
+
 function buildMapParticles(level) {
   const rng = mulberry32(level.no * 1907 + 71);
   const list = [];
@@ -3053,6 +3178,7 @@ function buildMapParticles(level) {
   }
   return list;
 }
+
 function resizeMapCanvas() {
   const canvas = $('#gameCanvas');
   const stage = $('#stage');
@@ -3073,6 +3199,7 @@ function resizeMapCanvas() {
   mapRuntime.background = null;
   prepareMapBackground();
 }
+
 function prepareMapBackground() {
   const level = mapRuntime.level;
   if (!level || !mapRuntime.width || !mapRuntime.height) return;
@@ -3087,15 +3214,18 @@ function prepareMapBackground() {
   paintMapBackground(ctx, w, h, level);
   mapRuntime.background = bg;
 }
+
 function paintMapBackground(ctx, w, h, level) {
   const p = MAP_PALETTES[level.theme] || MAP_PALETTES.ruijin;
   const rng = mulberry32(level.no * 7717 + 1934);
+
   const grad = ctx.createLinearGradient(0, 0, w, h);
   grad.addColorStop(0, p.base);
   grad.addColorStop(0.55, p.base2);
   grad.addColorStop(1, p.base);
   ctx.fillStyle = grad;
   ctx.fillRect(0, 0, w, h);
+
   // 纸面纹理
   for (let i = 0; i < 240; i++) {
     const x = rng() * w;
@@ -3103,6 +3233,7 @@ function paintMapBackground(ctx, w, h, level) {
     ctx.fillStyle = rng() > 0.5 ? `rgba(70,52,30,${0.025 + rng() * 0.04})` : `rgba(255,248,220,${0.03 + rng() * 0.05})`;
     ctx.fillRect(x, y, 1 + rng() * 2, 1 + rng() * 1.5);
   }
+
   // 等高线
   ctx.save();
   ctx.strokeStyle = 'rgba(77,61,37,.13)';
@@ -3117,6 +3248,7 @@ function paintMapBackground(ctx, w, h, level) {
     ctx.stroke();
   }
   ctx.restore();
+
   if (level.theme === 'ruijin') paintRuijin(ctx, w, h, p, rng);
   else if (level.theme === 'river') paintRiver(ctx, w, h, p, rng);
   else if (level.theme === 'town') paintTown(ctx, w, h, p, rng);
@@ -3124,8 +3256,10 @@ function paintMapBackground(ctx, w, h, level) {
   else if (level.theme === 'snow') paintSnow(ctx, w, h, p, rng);
   else if (level.theme === 'grass') paintGrass(ctx, w, h, p, rng);
   else paintLoess(ctx, w, h, p, rng);
+
   // 路线底纹
   drawMapRoute(ctx, w, h, level, true);
+
   // 标题水印与地名
   ctx.save();
   ctx.globalAlpha = 0.075;
@@ -3135,9 +3269,12 @@ function paintMapBackground(ctx, w, h, level) {
   ctx.textBaseline = 'bottom';
   ctx.fillText(level.name, w - w * 0.06, h - h * 0.05);
   ctx.restore();
+
   drawMapLabels(ctx, w, h, p, level);
+
   // 简陋却好用的指北针
   drawCompass(ctx, w - 58, h - 84, p, Math.min(w, h) * 0.036);
+
   // 地图内框
   ctx.save();
   ctx.strokeStyle = 'rgba(68,49,29,.34)';
@@ -3146,6 +3283,7 @@ function paintMapBackground(ctx, w, h, level) {
   ctx.strokeStyle = 'rgba(68,49,29,.14)';
   ctx.strokeRect(21, 21, w - 42, h - 42);
   ctx.restore();
+
   // 四角装饰
   ctx.save();
   ctx.strokeStyle = 'rgba(126,31,25,.42)';
@@ -3160,6 +3298,7 @@ function paintMapBackground(ctx, w, h, level) {
   });
   ctx.restore();
 }
+
 function paintRuijin(ctx, w, h, p, rng) {
   // 田野
   ctx.save();
@@ -3184,6 +3323,7 @@ function paintRuijin(ctx, w, h, p, rng) {
     ctx.restore();
   }
   ctx.restore();
+
   // 于都河
   ctx.save();
   ctx.strokeStyle = 'rgba(112,146,145,.55)';
@@ -3199,11 +3339,13 @@ function paintRuijin(ctx, w, h, p, rng) {
   ctx.setLineDash([10, 18]);
   ctx.stroke();
   ctx.restore();
+
   // 村庄
   drawVillage(ctx, w * 0.205, h * 0.555, Math.min(w, h) * 0.045, rng);
   drawTrees(ctx, w, h, p, rng, 18);
   drawHills(ctx, w, h, p, rng, 3);
 }
+
 function paintRiver(ctx, w, h, p, rng) {
   drawHills(ctx, w, h, p, rng, 4);
   // 湘江：宽阔斜向水带
@@ -3232,6 +3374,7 @@ function paintRiver(ctx, w, h, p, rng) {
     ctx.stroke();
   }
   ctx.restore();
+
   // 渡口
   ctx.save();
   ctx.strokeStyle = 'rgba(56,42,28,.5)';
@@ -3247,6 +3390,7 @@ function paintRiver(ctx, w, h, p, rng) {
   ctx.restore();
   drawTrees(ctx, w, h, p, rng, 14);
 }
+
 function paintTown(ctx, w, h, p, rng) {
   drawHills(ctx, w, h, p, rng, 3);
   // 城墙
@@ -3266,6 +3410,7 @@ function paintTown(ctx, w, h, p, rng) {
     ctx.fillRect(x, wallY + wallH, 8, 4);
   }
   ctx.restore();
+
   // 街道与房屋
   ctx.save();
   ctx.strokeStyle = 'rgba(97,80,52,.44)';
@@ -3280,6 +3425,7 @@ function paintTown(ctx, w, h, p, rng) {
   ctx.lineTo(w * 0.68, h * 0.67);
   ctx.stroke();
   ctx.restore();
+
   for (let i = 0; i < 14; i++) {
     const x = w * (0.48 + rng() * 0.38);
     const y = h * (0.26 + rng() * 0.38);
@@ -3287,6 +3433,7 @@ function paintTown(ctx, w, h, p, rng) {
   }
   drawTrees(ctx, w, h, p, rng, 12);
 }
+
 function paintGorge(ctx, w, h, p, rng) {
   // 深切峡谷
   ctx.save();
@@ -3309,6 +3456,7 @@ function paintGorge(ctx, w, h, p, rng) {
   ctx.closePath();
   ctx.fill();
   ctx.restore();
+
   // 大渡河
   ctx.save();
   ctx.strokeStyle = 'rgba(52,85,91,.85)';
@@ -3331,6 +3479,7 @@ function paintGorge(ctx, w, h, p, rng) {
     ctx.stroke();
   }
   ctx.restore();
+
   // 铁索桥
   ctx.save();
   ctx.translate(w * 0.50, h * 0.57);
@@ -3354,6 +3503,7 @@ function paintGorge(ctx, w, h, p, rng) {
   ctx.restore();
   drawTrees(ctx, w, h, p, rng, 9);
 }
+
 function paintSnow(ctx, w, h, p, rng) {
   // 山脊
   ctx.save();
@@ -3371,6 +3521,7 @@ function paintSnow(ctx, w, h, p, rng) {
     ctx.fill();
   }
   ctx.restore();
+
   // 雪坡纹理
   ctx.save();
   ctx.strokeStyle = 'rgba(255,255,255,.4)';
@@ -3384,6 +3535,7 @@ function paintSnow(ctx, w, h, p, rng) {
     ctx.stroke();
   }
   ctx.restore();
+
   // 登山路径
   ctx.save();
   ctx.strokeStyle = 'rgba(98,104,99,.32)';
@@ -3395,11 +3547,13 @@ function paintSnow(ctx, w, h, p, rng) {
   ctx.bezierCurveTo(w * 0.68, h * 0.35, w * 0.7, h * 0.24, w * 0.82, h * 0.19);
   ctx.stroke();
   ctx.restore();
+
   // 零星松树
   for (let i = 0; i < 8; i++) {
     drawPine(ctx, w * (0.08 + rng() * 0.8), h * (0.42 + rng() * 0.42), 6 + rng() * 6, 'rgba(69,84,72,.4)');
   }
 }
+
 function paintGrass(ctx, w, h, p, rng) {
   // 水面与泥沼
   ctx.save();
@@ -3419,6 +3573,7 @@ function paintGrass(ctx, w, h, p, rng) {
     ctx.stroke();
   }
   ctx.restore();
+
   // 草丛
   ctx.save();
   ctx.strokeStyle = 'rgba(91,95,55,.4)';
@@ -3433,6 +3588,7 @@ function paintGrass(ctx, w, h, p, rng) {
     ctx.stroke();
   }
   ctx.restore();
+
   // 蜿蜒水道
   ctx.save();
   ctx.strokeStyle = 'rgba(89,119,109,.28)';
@@ -3444,10 +3600,12 @@ function paintGrass(ctx, w, h, p, rng) {
   ctx.bezierCurveTo(w * 0.72, h * 0.42, w * 0.7, h * 0.67, w * 0.98, h * 0.6);
   ctx.stroke();
   ctx.restore();
+
   for (let i = 0; i < 9; i++) {
     drawPine(ctx, w * (0.08 + rng() * 0.84), h * (0.2 + rng() * 0.68), 4 + rng() * 5, 'rgba(71,84,52,.38)');
   }
 }
+
 function paintLoess(ctx, w, h, p, rng) {
   // 黄土塬
   ctx.save();
@@ -3463,6 +3621,7 @@ function paintLoess(ctx, w, h, p, rng) {
     ctx.stroke();
   }
   ctx.restore();
+
   // 会宁城
   ctx.save();
   const cx = w * 0.52;
@@ -3480,6 +3639,7 @@ function paintLoess(ctx, w, h, p, rng) {
   ctx.fillStyle = 'rgba(74,48,28,.5)';
   ctx.fillRect(cx - 12, cy + 16, 24, 26);
   ctx.restore();
+
   for (let i = 0; i < 14; i++) {
     const x = w * (0.46 + rng() * 0.3);
     const y = h * (0.28 + rng() * 0.26);
@@ -3488,6 +3648,7 @@ function paintLoess(ctx, w, h, p, rng) {
   drawTrees(ctx, w, h, p, rng, 16);
   drawHills(ctx, w, h, p, rng, 2);
 }
+
 function drawHills(ctx, w, h, p, rng, count) {
   ctx.save();
   for (let i = 0; i < count; i++) {
@@ -3507,6 +3668,7 @@ function drawHills(ctx, w, h, p, rng, count) {
   }
   ctx.restore();
 }
+
 function drawTrees(ctx, w, h, p, rng, count) {
   for (let i = 0; i < count; i++) {
     const x = w * (0.04 + rng() * 0.92);
@@ -3515,6 +3677,7 @@ function drawTrees(ctx, w, h, p, rng, count) {
     drawPine(ctx, x, y, 4 + rng() * 5, 'rgba(68,84,54,.42)');
   }
 }
+
 function drawPine(ctx, x, y, size, color) {
   ctx.save();
   ctx.strokeStyle = color;
@@ -3536,6 +3699,7 @@ function drawPine(ctx, x, y, size, color) {
   }
   ctx.restore();
 }
+
 function drawHouse(ctx, x, y, ww, hh, rng) {
   ctx.save();
   ctx.translate(x, y);
@@ -3551,6 +3715,7 @@ function drawHouse(ctx, x, y, ww, hh, rng) {
   ctx.fill();
   ctx.restore();
 }
+
 function drawVillage(ctx, x, y, size, rng) {
   ctx.save();
   ctx.translate(x, y);
@@ -3567,6 +3732,7 @@ function drawVillage(ctx, x, y, size, rng) {
   }
   ctx.restore();
 }
+
 function drawMapLabels(ctx, w, h, p, level) {
   ctx.save();
   ctx.fillStyle = 'rgba(70,53,33,.48)';
@@ -3586,6 +3752,7 @@ function drawMapLabels(ctx, w, h, p, level) {
   });
   ctx.restore();
 }
+
 function drawCompass(ctx, x, y, p, r) {
   ctx.save();
   ctx.translate(x, y);
@@ -3618,6 +3785,7 @@ function drawCompass(ctx, x, y, p, r) {
   ctx.fillText('N', 0, -r - 5);
   ctx.restore();
 }
+
 function currentPoints() {
   const level = mapRuntime.level || getLevel();
   return level.points.map(point => {
@@ -3625,6 +3793,7 @@ function currentPoints() {
     return { ...point, done: !!progress[point.id] };
   });
 }
+
 function drawMapRoute(ctx, w, h, level, base) {
   const points = level.points;
   const start = level.start;
@@ -3644,6 +3813,7 @@ function drawMapRoute(ctx, w, h, level, base) {
   ctx.stroke();
   ctx.restore();
 }
+
 function drawMap(time, dt) {
   if (!mapRuntime.ctx || state.screen !== 'game') return;
   const ctx = mapRuntime.ctx;
@@ -3652,18 +3822,21 @@ function drawMap(time, dt) {
   if (!w || !h) return;
   ctx.setTransform(mapRuntime.dpr, 0, 0, mapRuntime.dpr, 0, 0);
   ctx.clearRect(0, 0, w, h);
+
   if (mapRuntime.background) {
     ctx.drawImage(mapRuntime.background, 0, 0, w, h);
   } else {
     ctx.fillStyle = '#cdbf9b';
     ctx.fillRect(0, 0, w, h);
   }
+
   const level = mapRuntime.level || getLevel();
   const points = currentPoints();
   drawAnimatedMapWeather(ctx, w, h, level, time, dt);
   drawMapRoute(ctx, w, h, level, false);
   drawPoints(ctx, w, h, points, time);
   drawPlayer(ctx, w, h, time, dt);
+
   // 边缘的轻微暗角
   const vg = ctx.createRadialGradient(w * 0.5, h * 0.45, Math.min(w, h) * 0.25, w * 0.5, h * 0.5, Math.max(w, h) * 0.72);
   vg.addColorStop(0, 'rgba(20,12,8,0)');
@@ -3671,6 +3844,7 @@ function drawMap(time, dt) {
   ctx.fillStyle = vg;
   ctx.fillRect(0, 0, w, h);
 }
+
 function drawAnimatedMapWeather(ctx, w, h, level, time, dt) {
   const parts = mapRuntime.particles;
   if (!parts.length) return;
@@ -3730,6 +3904,7 @@ function drawAnimatedMapWeather(ctx, w, h, level, time, dt) {
     ctx.restore();
   }
 }
+
 function drawPoints(ctx, w, h, points, time) {
   const s = Math.min(w, h);
   for (const point of points) {
@@ -3741,6 +3916,7 @@ function drawPoints(ctx, w, h, points, time) {
     const colorLight = point.type === 'main' ? '#d75543' : point.type === 'mini' ? '#83a9a3' : '#dfc084';
     ctx.save();
     ctx.translate(x, y);
+
     if (!point.done) {
       // 光晕与涟漪
       ctx.globalAlpha = 0.1 + pulse * 0.08;
@@ -3755,6 +3931,7 @@ function drawPoints(ctx, w, h, points, time) {
       ctx.arc(0, 0, baseR * (1.5 + pulse * 0.28), 0, Math.PI * 2);
       ctx.stroke();
     }
+
     // 外圆
     ctx.globalAlpha = 1;
     ctx.fillStyle = point.done ? 'rgba(75,69,53,.4)' : 'rgba(245,236,211,.78)';
@@ -3771,6 +3948,7 @@ function drawPoints(ctx, w, h, points, time) {
     ctx.beginPath();
     ctx.arc(0, 0, baseR - 4, 0, Math.PI * 2);
     ctx.stroke();
+
     // 内部符号
     if (point.done) {
       ctx.strokeStyle = 'rgba(69,62,46,.7)';
@@ -3796,6 +3974,7 @@ function drawPoints(ctx, w, h, points, time) {
         ctx.fillText('问', 0, baseR * 0.04);
       }
     }
+
     // 标签
     const label = point.name;
     ctx.font = `600 ${Math.max(10, Math.min(13, s * 0.016))}px ${CANVAS_SANS}`;
@@ -3812,6 +3991,7 @@ function drawPoints(ctx, w, h, points, time) {
     ctx.restore();
   }
 }
+
 function drawStar(ctx, cx, cy, outer, inner, points) {
   ctx.beginPath();
   for (let i = 0; i < points * 2; i++) {
@@ -3824,6 +4004,7 @@ function drawStar(ctx, cx, cy, outer, inner, points) {
   ctx.closePath();
   ctx.fill();
 }
+
 function roundRect(ctx, x, y, w, h, r) {
   const rr = Math.min(r, w / 2, h / 2);
   ctx.beginPath();
@@ -3834,6 +4015,7 @@ function roundRect(ctx, x, y, w, h, r) {
   ctx.arcTo(x, y, x + w, y, rr);
   ctx.closePath();
 }
+
 function drawPlayer(ctx, w, h, time, dt) {
   const p = mapRuntime.player;
   const x = p.x * w;
@@ -3844,8 +4026,10 @@ function drawPlayer(ctx, w, h, time, dt) {
   const bob = moving ? Math.sin(mapRuntime.bob) * 1.2 : Math.sin(time * 0.002) * 0.55;
   const wave = moving ? Math.sin(time * 0.006) * s * 0.06 : Math.sin(time * 0.0025) * s * 0.025;
   const legSwing = moving ? Math.sin(mapRuntime.bob) * s * 0.25 : 0;
+
   ctx.save();
   ctx.translate(x, y);
+
   // 地面阴影与队伍光晕
   ctx.fillStyle = 'rgba(35,25,16,.24)';
   ctx.beginPath();
@@ -3859,7 +4043,9 @@ function drawPlayer(ctx, w, h, time, dt) {
   ctx.beginPath();
   ctx.arc(0, 0, s * 3.9, 0, Math.PI * 2);
   ctx.fill();
+
   ctx.translate(0, bob);
+
   // 旗杆与军旗
   ctx.save();
   ctx.strokeStyle = '#3f2b1b';
@@ -3898,6 +4084,7 @@ function drawPlayer(ctx, w, h, time, dt) {
   ctx.quadraticCurveTo(-s * 0.2, -s * 1.38 + wave, s * 0.26, -s * 1.3);
   ctx.stroke();
   ctx.restore();
+
   // 背后的步枪
   ctx.save();
   ctx.strokeStyle = 'rgba(55,38,24,.9)';
@@ -3914,6 +4101,7 @@ function drawPlayer(ctx, w, h, time, dt) {
   ctx.lineTo(s * 0.26, s * 0.37);
   ctx.stroke();
   ctx.restore();
+
   // 背包
   ctx.fillStyle = '#5d5540';
   ctx.strokeStyle = 'rgba(36,30,21,.75)';
@@ -3927,6 +4115,7 @@ function drawPlayer(ctx, w, h, time, dt) {
   ctx.moveTo(-s * 0.69, -s * 0.03);
   ctx.lineTo(-s * 0.49, -s * 0.03);
   ctx.stroke();
+
   // 腿：绑腿、草鞋
   const drawLeg = (x0, y0, x1, y1, front) => {
     ctx.strokeStyle = front ? '#4a5548' : '#3b463c';
@@ -3954,6 +4143,7 @@ function drawPlayer(ctx, w, h, time, dt) {
   };
   drawLeg(-s * 0.19, s * 0.32, -s * 0.31 - legSwing, s * 1.02, false);
   drawLeg(s * 0.19, s * 0.32, s * 0.31 + legSwing, s * 1.02, true);
+
   // 军装躯干
   const bodyGrad = ctx.createLinearGradient(-s * 0.45, -s * 0.5, s * 0.45, s * 0.55);
   bodyGrad.addColorStop(0, '#63705b');
@@ -3970,6 +4160,7 @@ function drawPlayer(ctx, w, h, time, dt) {
   ctx.closePath();
   ctx.fill();
   ctx.stroke();
+
   // 红色领章
   ctx.fillStyle = '#a7241b';
   ctx.beginPath();
@@ -3984,6 +4175,7 @@ function drawPlayer(ctx, w, h, time, dt) {
   ctx.lineTo(s * 0.17, -s * 0.36);
   ctx.closePath();
   ctx.fill();
+
   // 斜挎带、腰带与铜扣
   ctx.strokeStyle = 'rgba(71,53,33,.9)';
   ctx.lineWidth = Math.max(0.8, s * 0.055);
@@ -4007,6 +4199,7 @@ function drawPlayer(ctx, w, h, time, dt) {
     ctx.arc(s * 0.08, -s * 0.35 + i * s * 0.15, s * 0.028, 0, Math.PI * 2);
     ctx.fill();
   }
+
   // 双臂
   const armSwing = moving ? Math.sin(mapRuntime.bob + Math.PI) * s * 0.16 : 0;
   const drawArm = (fromX, fromY, toX, toY, side) => {
@@ -4024,6 +4217,7 @@ function drawPlayer(ctx, w, h, time, dt) {
   };
   drawArm(-s * 0.4, -s * 0.35, -s * 0.7, s * 0.13 + armSwing, false);
   drawArm(s * 0.4, -s * 0.35, s * 0.64, s * 0.12 - armSwing, true);
+
   // 脖颈与头部
   ctx.fillStyle = '#b9855d';
   ctx.fillRect(-s * 0.09, -s * 0.72, s * 0.18, s * 0.18);
@@ -4045,6 +4239,7 @@ function drawPlayer(ctx, w, h, time, dt) {
   ctx.beginPath();
   ctx.arc(s * 0.08, -s * 0.92, s * 0.025, 0, Math.PI * 2);
   ctx.fill();
+
   // 八角帽
   const capGrad = ctx.createLinearGradient(-s * 0.3, -s * 1.3, s * 0.3, -s * 0.9);
   capGrad.addColorStop(0, '#4e5b4d');
@@ -4073,8 +4268,10 @@ function drawPlayer(ctx, w, h, time, dt) {
   ctx.beginPath();
   ctx.arc(0, -s * 1.18, s * 0.15, 0, Math.PI * 2);
   ctx.stroke();
+
   ctx.restore();
 }
+
 function updateMap(dt, time) {
   if (state.screen !== 'game' || overlayKind || miniState) {
     mapRuntime.moving = false;
@@ -4099,6 +4296,7 @@ function updateMap(dt, time) {
     p.x = clamp(p.x + dx * speed * dt / mapRuntime.width, 0.065, 0.935);
     p.y = clamp(p.y + dy * speed * dt / mapRuntime.height, 0.205, 0.91);
   }
+
   // 最近的可触发点
   const level = mapRuntime.level || getLevel();
   let near = null;
@@ -4128,6 +4326,7 @@ function updateMap(dt, time) {
     openMapEvent(near);
   }
 }
+
 function openMapEvent(point) {
   const level = mapRuntime.level || getLevel();
   if (point.type === 'mini') {
@@ -4137,6 +4336,7 @@ function openMapEvent(point) {
   }
   openQA(point, point.type);
 }
+
 function bindMapInput() {
   const valid = new Set(['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'w', 'a', 's', 'd', 'W', 'A', 'S', 'D']);
   window.addEventListener('keydown', event => {
@@ -4160,6 +4360,7 @@ function bindMapInput() {
     mapRuntime.keys = { up: false, down: false, left: false, right: false };
     mapRuntime.touch = { up: false, down: false, left: false, right: false };
   });
+
   $$('#mobilePad [data-dir]').forEach(btn => {
     const dir = btn.dataset.dir;
     const on = ev => {
@@ -4181,16 +4382,20 @@ function bindMapInput() {
     btn.addEventListener('pointerleave', off);
     btn.addEventListener('contextmenu', ev => ev.preventDefault());
   });
+
   const stage = $('#stage');
   if (stage) {
     new ResizeObserver(() => resizeMapCanvas()).observe(stage);
   }
   window.addEventListener('resize', () => resizeMapCanvas());
 }
+
+
 /* ============================================================
    分支小游戏：打字御敌 / 铁索跑酷 / 雪山落雪 / 沼泽迷宫
    ============================================================ */
 const TYPING_WORDS = ['冲锋', '掩护', '渡江', '坚守', '突围', '战友', '信仰', '行军', '阵地', '后卫'];
+
 const MINI_INFO = {
   typing: {
     label: '打字御敌',
@@ -4217,6 +4422,7 @@ const MINI_INFO = {
     color: '#7a8b5a'
   }
 };
+
 function openMiniGame(point) {
   if (overlayKind || miniState) return;
   const level = getLevel();
@@ -4226,6 +4432,7 @@ function openMiniGame(point) {
   initAudioOnGesture();
   audio.setScene('mini');
   audio.sfx('open');
+
   miniState = {
     kind: cfg.kind,
     cfg,
@@ -4253,6 +4460,7 @@ function openMiniGame(point) {
     ready: false,
     stats: {}
   };
+
   const info = MINI_INFO[cfg.kind];
   const isTyping = cfg.kind === 'typing';
   let controls = '';
@@ -4275,12 +4483,14 @@ function openMiniGame(point) {
         <div class="mini-control-copy">${cfg.kind === 'snow' ? '在雪坡上自由移动，避开不断滚落的雪球与飘落的雪花。' : '在十乘十的沼泽迷宫中寻找唯一出口，泥潭会同时消耗兵员与粮食。'}</div>
       </div>`;
   }
+
   const typingBar = isTyping ? `
     <div class="mini-typing">
       <span class="typing-label">输入词语</span>
       <input class="typing-input" id="typingInput" type="text" autocomplete="off" autocapitalize="off" spellcheck="false" maxlength="8" placeholder="输入敌人身上的词语，按回车迎敌">
       <button class="typing-submit" id="typingSubmit" type="button">迎敌</button>
     </div>` : '';
+
   const html = `
     <article class="panel mini-panel" role="dialog" aria-modal="true" aria-labelledby="miniTitle">
       <header class="mini-head">
@@ -4306,14 +4516,17 @@ function openMiniGame(point) {
       ${controls}
     </article>
   `;
+
   showOverlay(html, 'mini', { focus: isTyping ? '#typingInput' : '#miniCanvas' });
   const m = miniState;
   m.canvas = $('#miniCanvas');
   m.ctx = m.canvas ? m.canvas.getContext('2d') : null;
+
   $('#miniExit').addEventListener('click', () => {
     if (m.resultShown) closeMiniToMap();
     else exitMiniGame();
   });
+
   requestAnimationFrame(() => {
     if (!miniState) return;
     resizeMiniCanvas();
@@ -4343,6 +4556,7 @@ function openMiniGame(point) {
     bindMiniTouchControls();
   });
 }
+
 function resizeMiniCanvas() {
   const m = miniState;
   if (!m) return;
@@ -4372,6 +4586,7 @@ function resizeMiniCanvas() {
     m.player.y = clamp(m.player.y, h * 0.28, h * 0.86);
   }
 }
+
 function setupMiniGame() {
   const m = miniState;
   if (!m) return;
@@ -4412,6 +4627,7 @@ function setupMiniGame() {
   }
   m.ready = true;
 }
+
 function bindMiniTouchControls() {
   const m = miniState;
   if (!m) return;
@@ -4461,6 +4677,7 @@ function bindMiniTouchControls() {
     btn.addEventListener('contextmenu', event => event.preventDefault());
   });
 }
+
 function updateTimerUI() {
   const m = miniState;
   if (!m) return;
@@ -4476,6 +4693,7 @@ function updateTimerUI() {
     fill.style.transform = `scaleX(${ratio})`;
   }
 }
+
 function updateMiniHud() {
   const m = miniState;
   const line = $('#miniHudline');
@@ -4492,6 +4710,7 @@ function updateMiniHud() {
   }
   line.innerHTML = html;
 }
+
 function tickMini(dt) {
   const m = miniState;
   if (!m || !m.ready || m.over) return;
@@ -4517,6 +4736,7 @@ function tickMini(dt) {
   updateMiniParticles(dt);
   if (m.kind === 'snow' || m.kind === 'maze') updateMiniHud();
 }
+
 function updateMiniParticles(dt) {
   const m = miniState;
   if (!m) return;
@@ -4534,6 +4754,7 @@ function updateMiniParticles(dt) {
     return f.life > 0;
   });
 }
+
 function addMiniParticles(x, y, color, count = 14, spread = 160) {
   const m = miniState;
   if (!m) return;
@@ -4554,11 +4775,13 @@ function addMiniParticles(x, y, color, count = 14, spread = 160) {
     });
   }
 }
+
 function addMiniFloat(text, x, y, color = '#ffd6a0') {
   const m = miniState;
   if (!m) return;
   m.floats.push({ text, x, y, color, life: 1.1 });
 }
+
 function miniDamage(effects, x, y, label) {
   const m = miniState;
   if (!m) return;
@@ -4570,6 +4793,7 @@ function miniDamage(effects, x, y, label) {
   audio.sfx('hit');
   updateMiniHud();
 }
+
 function timeExpired() {
   const m = miniState;
   if (!m || m.over) return;
@@ -4605,6 +4829,7 @@ function timeExpired() {
     });
   }
 }
+
 /* ---------------- 打字御敌 ---------------- */
 function updateTyping(dt) {
   const m = miniState;
@@ -4638,6 +4863,7 @@ function updateTyping(dt) {
     finishTyping();
   }
 }
+
 function spawnTypingEnemy() {
   const m = miniState;
   const active = new Set(m.enemies.map(e => e.word));
@@ -4659,6 +4885,7 @@ function spawnTypingEnemy() {
   m.spawned++;
   m.stats.spawned = m.spawned;
 }
+
 function submitTyping() {
   const m = miniState;
   if (!m || !m.ready || m.over || m.kind !== 'typing' || !m.enemies) return;
@@ -4696,6 +4923,7 @@ function submitTyping() {
     finishTyping();
   }
 }
+
 function finishTyping() {
   const m = miniState;
   if (!m || m.over) return;
@@ -4716,6 +4944,7 @@ function finishTyping() {
     quote: '湘江血战，后卫部队以血肉之躯掩护中央纵队渡江。每一道防线，都是战士用生命换来的时间。'
   });
 }
+
 function drawTyping(ctx, m) {
   const w = m.width;
   const h = m.height;
@@ -4725,6 +4954,7 @@ function drawTyping(ctx, m) {
   bg.addColorStop(1, '#3a2118');
   ctx.fillStyle = bg;
   ctx.fillRect(0, 0, w, h);
+
   // 远山与江面
   ctx.save();
   ctx.fillStyle = 'rgba(16,34,35,.65)';
@@ -4749,6 +4979,7 @@ function drawTyping(ctx, m) {
     ctx.stroke();
   }
   ctx.restore();
+
   // 探照灯
   ctx.save();
   const sweep = (Math.sin(m.elapsed * 0.55) + 1) / 2;
@@ -4765,6 +4996,7 @@ function drawTyping(ctx, m) {
   ctx.closePath();
   ctx.fill();
   ctx.restore();
+
   // 敌人
   for (const enemy of m.enemies) {
     drawTypingEnemy(ctx, enemy, m);
