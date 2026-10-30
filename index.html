@@ -578,6 +578,82 @@ canvas{display:block;}
 .a-section-label small{display:block;margin-top:3px;font-family:var(--sans);font-size:7px;letter-spacing:.1em;color:rgba(235,220,192,.25);}
 .a-section p{color:rgba(239,229,209,.64);font-size:12px;line-height:2;letter-spacing:.02em;}
 .a-section p strong{color:rgba(247,237,217,.86);font-weight:600;}
+
+/* ============================================================
+   信物藏品面板：内联 SVG 插画 / 正文 / 留白 / 拾取弹窗
+   所有配图由代码绘制，不引入外部网络链接，保证单文件离线运行
+   ============================================================ */
+.artifact-figure{
+  margin:20px 0 0;padding:10px;border:1px solid rgba(216,178,108,.18);
+  background:linear-gradient(160deg,rgba(255,255,255,.025),rgba(0,0,0,.16));
+}
+.artifact-image{
+  position:relative;aspect-ratio:16/9;overflow:hidden;border:1px solid rgba(216,178,108,.2);
+  background:#120b09;
+}
+.artifact-art{display:block;width:100%;height:100%;}
+.artifact-image::after{
+  content:"";position:absolute;inset:0;pointer-events:none;z-index:2;
+  box-shadow:inset 0 0 70px rgba(0,0,0,.55),inset 0 0 0 1px rgba(216,178,108,.12);
+}
+.artifact-image .ai-type{
+  position:absolute;z-index:3;left:14px;top:12px;padding:3px 8px;
+  border:1px solid rgba(216,178,108,.4);background:rgba(15,9,7,.58);
+  color:var(--gold-light);font-size:8px;letter-spacing:.16em;
+}
+.artifact-image .ai-index{
+  position:absolute;z-index:3;right:14px;bottom:12px;padding:2px 6px;
+  background:rgba(15,9,7,.55);color:rgba(216,178,108,.62);
+  font-size:8px;letter-spacing:.14em;
+}
+.artifact-figure figcaption{
+  margin-top:9px;padding:0 4px 2px;color:rgba(235,220,192,.42);font-size:10px;line-height:1.8;letter-spacing:.03em;
+}
+.artifact-figure figcaption b{color:var(--gold);font-weight:500;margin-right:7px;letter-spacing:.1em;}
+.artifact-line{
+  padding:22px 14px;text-align:center;font-family:var(--serif);
+  font-size:clamp(19px,2.2vw,24px);line-height:1.8;letter-spacing:.18em;color:#f1dfb6;
+  border-top:1px solid rgba(216,178,108,.16);border-bottom:1px solid rgba(216,178,108,.16);
+  background:linear-gradient(180deg,rgba(216,178,108,.04),rgba(0,0,0,.08));
+}
+.a-section p.artifact-body{font-size:13px;line-height:2.15;color:rgba(245,236,218,.76);}
+.a-section p.artifact-line{
+  padding:22px 14px;text-align:center;font-family:var(--serif);
+  font-size:clamp(19px,2.2vw,24px);line-height:1.8;letter-spacing:.18em;color:#f1dfb6;
+  border-top:1px solid rgba(216,178,108,.16);border-bottom:1px solid rgba(216,178,108,.16);
+  background:linear-gradient(180deg, rgba(216,178,108,.04), rgba(0,0,0,.08));
+}
+.pickup-panel{width:min(760px,100%);}
+.pickup-panel .artifact-figure{margin-top:0;}
+.pickup-panel .artifact-image{min-height:0;}
+.pickup-body{margin-top:17px;color:rgba(245,236,218,.78);font-size:13px;line-height:2.1;letter-spacing:.02em;}
+.pickup-line{margin-top:18px;}
+.pickup-note{
+  margin-top:15px;padding:10px 12px;border-left:2px solid rgba(155,28,23,.55);
+  background:rgba(0,0,0,.16);color:rgba(235,220,192,.42);font-size:10px;line-height:1.8;
+}
+.level-panel{width:min(640px,100%);}
+.level-progress{display:flex;flex-wrap:wrap;gap:7px;margin-top:14px;}
+.level-progress span{
+  padding:5px 9px;border:1px solid rgba(216,178,108,.16);background:rgba(0,0,0,.14);
+  color:rgba(235,220,192,.5);font-size:10px;letter-spacing:.04em;
+}
+.level-progress span.done{border-color:rgba(111,138,93,.4);color:#cfe0b6;}
+.level-tip{
+  margin-top:15px;padding:10px 12px;border-left:2px solid rgba(155,28,23,.55);
+  background:rgba(0,0,0,.15);color:rgba(235,220,192,.4);font-size:10px;line-height:1.8;
+}
+.finale-artifacts .fa-item.missing{opacity:.42;}
+.finale-artifacts .fa-item.missing .fa-name{color:rgba(239,229,209,.36);}
+.finale-artifacts .fa-item.missing .fa-mark{color:rgba(235,220,192,.36);}
+@media (max-width:600px){
+  .artifact-figure{padding:7px;}
+  .artifact-image .ai-type{left:9px;top:8px;font-size:7px;padding:2px 6px;}
+  .artifact-image .ai-index{right:9px;bottom:8px;font-size:7px;}
+  .artifact-figure figcaption{font-size:9px;}
+  .a-section p.artifact-line{font-size:18px;letter-spacing:.12em;}
+  .pickup-line{font-size:18px;letter-spacing:.12em;}
+}
 .archive-empty{min-height:260px;display:grid;place-items:center;text-align:center;color:rgba(235,220,192,.35);font-size:11px;line-height:2;}
 .archive-empty .lock-big{font-family:var(--serif);font-size:46px;color:rgba(216,178,108,.2);margin-bottom:8px;}
 .archive-foot{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:13px 20px;border-top:1px solid rgba(216,178,108,.13);background:rgba(0,0,0,.14);position:relative;z-index:1;}
@@ -902,7 +978,7 @@ canvas{display:block;}
         <span><i></i>7 个历史节点</span>
         <span><i></i>14 段主线与支线抉择</span>
         <span><i></i>4 个分支推演</span>
-        <span><i></i>7 件史料藏品</span>
+        <span><i></i>7 件手记信物</span>
       </div>
       <div class="hero-actions">
         <button class="btn btn-primary" id="startBtn" type="button">
@@ -1035,7 +1111,7 @@ canvas{display:block;}
       </div>
     </div>
 
-    <div class="map-hint"><span class="key">W</span><span class="key">A</span><span class="key">S</span><span class="key">D</span><span>移动沙盘 · 触碰光点触发历史事件</span></div>
+    <div class="map-hint"><span class="key">W</span><span class="key">A</span><span class="key">S</span><span class="key">D</span><span>移动沙盘 · 触碰光点触发事件 · 金色点位拾取藏品</span></div>
     <div class="near-hint" id="nearHint">抵达触发事件</div>
   </div>
 
@@ -1046,7 +1122,7 @@ canvas{display:block;}
       <button class="down" type="button" data-dir="down" aria-label="向下">▼</button>
       <button class="right" type="button" data-dir="right" aria-label="向右">▶</button>
     </div>
-    <div class="mobile-pad-note"><b>走向历史坐标</b>触碰浅色圆圈<br>完成主线与支线，解锁史料</div>
+    <div class="mobile-pad-note"><b>走向历史坐标</b>触碰浅色圆圈<br>走近金色点位，拾取手记信物</div>
   </div>
 </section>
 
@@ -1167,16 +1243,6 @@ const LEVELS = [
         note: '于都河架桥是中央红军长征出发时的真实场景。苏区群众献出门板、床板，帮助红军架设浮桥；红军则强调借东西要还、损坏东西要赔。'
       }
     },
-    artifact: {
-      id: 'suqu-dongyuan',
-      name: '苏区基层动员手记',
-      stage: '瑞金 · 1934',
-      emblem: '民',
-      era: '中央苏区 · 战略转移前夕',
-      history: '1934年10月，中央红军长征前夕，苏区开展了借粮、筹款、扩红和担架队动员。中华苏维埃共和国临时中央政府发布训令，要求红军严守群众纪律，借粮开具借条，损坏东西照价赔偿。于都河畔，百姓献出门板、床板架设浮桥，送别红军。',
-      strategy: '兵民是胜利之本。战略转移不仅是军事行动，后勤、兵员、情报与民心共同构成隐蔽的“第二战场”。有限人力如何动员，折射出战争承受力与根据地存续之间的艰难平衡。',
-      spirit: '军民鱼水、纪律如铁、信任与牺牲。一张借条背后，是制度的约束，也是政治信用与人民情感的双重抵押。'
-    }
   },
 
   {
@@ -1263,16 +1329,6 @@ const LEVELS = [
         note: '红三十四师在湘江战役中担任全军后卫，完成掩护任务后被敌切断，几乎全部牺牲。师长陈树湘重伤被俘后断肠明志，是长征史上极为悲壮的一页。'
       }
     },
-    artifact: {
-      id: 'xiangjiang-riji',
-      name: '湘江战地日记',
-      stage: '湘江 · 1934',
-      emblem: '血',
-      era: '湘江战役 · 1934年冬',
-      history: '1934年11月底至12月初，中央红军在湘江上游广西境内与国民党军激战，突破第四道封锁线。红三十四师等部担任后卫，损失惨重。中央纵队渡过湘江，但中央红军由出发时的8.6万余人锐减至3万余人。',
-      strategy: '以空间换时间，以重大牺牲掩护中央纵队。甬道式行军使部队行动迟缓，暴露了军事指挥上的错误；血战的代价也促使党和红军认真反思，为遵义会议的召开埋下伏笔。',
-      spirit: '向死而生、顾全大局、忠诚担当。湘江的水记住了一个道理：错误的路线会让最勇敢的人付出最大的代价。'
-    }
   },
 
   {
@@ -1350,16 +1406,6 @@ const LEVELS = [
         note: '土城战役是遵义会议后红军打的第一仗。因对川军兵力判断有误，战斗未能达到预期目的，红军被迫一渡赤水。这一仗促使红军进一步重视敌情侦察与战场应变。'
       }
     },
-    artifact: {
-      id: 'zunyi-zhencha',
-      name: '遵义侦查记录',
-      stage: '遵义 · 1935',
-      emblem: '察',
-      era: '遵义会议前后 · 1935年1月',
-      history: '1935年1月，中央红军攻占遵义，随后召开中共中央政治局扩大会议（遵义会议），总结第五次反“围剿”和长征初期失利的教训，开始确立毛泽东在党中央和红军中的领导地位。会前会后，红军通过破译密电、派出侦察、发动群众等方式收集情报，为四渡赤水做准备。',
-      strategy: '情报研判是战略转折的前提。多源交叉验证、去伪存真，使指挥员从被动应对转向主动调动敌人。遵义会议是中国共产党独立自主解决中国革命实际问题的重要开端。',
-      spirit: '实事求是、独立自主、自我纠错、民主团结。真正的转折，往往从承认问题开始。'
-    }
   },
 
   {
@@ -1446,16 +1492,6 @@ const LEVELS = [
         note: '飞夺泸定桥时，红四团22名突击队员冒着枪弹攀踏铁索，后续部队铺桥跟进。勇士们的姓名与事迹，成为长征精神最具体的注脚。'
       }
     },
-    artifact: {
-      id: 'luding-tuji',
-      name: '泸定桥突击队员手记',
-      stage: '泸定桥 · 1935',
-      emblem: '勇',
-      era: '飞夺泸定桥 · 1935年5月',
-      history: '1935年5月，红四团一昼夜奔袭240里，赶到泸定桥。桥板已被敌人拆除，只剩十三根铁索。22名突击队员冒着枪弹攀踏铁索冲锋，后续部队铺桥跟进，最终夺下泸定桥，为中央红军北上打开了通道。',
-      strategy: '时间与速度成为胜负手。以有限兵力实施高风险突击，同时以火力封锁对岸，体现突然性、协同与士气的重要性。夺桥使红军避免了成为“石达开第二”的危局。',
-      spirit: '一不怕苦、二不怕死；英勇顽强、使命必达。铁索之上，没有退路，只有向前。'
-    }
   },
 
   {
@@ -1542,16 +1578,6 @@ const LEVELS = [
         note: '翻越雪山时，红军战士常在极度疲惫中互相搀扶，不能轻易坐下休息。喝辣椒汤、生姜水御寒，靠集体互助翻过山口，是长征中真实的生存经验。'
       }
     },
-    artifact: {
-      id: 'jiajin-biji',
-      name: '翻越夹金山行军笔记',
-      stage: '夹金山 · 1935',
-      emblem: '雪',
-      era: '翻越夹金山 · 1935年6月',
-      history: '1935年6月，中央红军翻越海拔4000多米的夹金山，这是长征中第一座大雪山。空气稀薄、风雪冰雹、道路陡滑，红军战士互相搀扶，许多人因缺氧和严寒牺牲。翻越雪山后，中央红军与红四方面军在懋功会师。',
-      strategy: '高海拔与恶劣气候构成巨大的非战斗损耗。行军编组、防寒物资与节奏控制，直接影响部队战斗力的保存；翻越雪山同时也实现了战略机动，帮助红军摆脱追敌。',
-      spirit: '革命英雄主义、互助友爱、坚韧不拔。雪山无言，却记住了那些互相搀扶的背影。'
-    }
   },
 
   {
@@ -1575,7 +1601,7 @@ const LEVELS = [
       pointName: '沼泽迷宫',
       title: '复杂沼泽迷宫',
       subtitle: '松潘草地 · 泥沼迷途',
-      brief: '十乘十的沼泽迷宫里遍布死路。用方向键移动，避开泥潭，从左上走到右下。',
+      brief: '十乘十的沼泽迷宫里遍布死路。用方向键移动，避开泥潭，从左上走到右下；撞墙会退回起点。',
       duration: 30
     },
     qa: {
@@ -1638,16 +1664,6 @@ const LEVELS = [
         note: '过草地时，红军粮食极度匮乏，战士以野菜、草根、皮带充饥。为避免误食毒草，部队常组织有经验的人辨认野菜，党员干部先试吃，是真实而沉重的生存经验。'
       }
     },
-    artifact: {
-      id: 'caodi-jilu',
-      name: '草地行军记录',
-      stage: '松潘草地 · 1935',
-      emblem: '草',
-      era: '过草地 · 1935年8月',
-      history: '1935年8月，红军进入松潘草地。草地泥沼遍布、气候无常、粮食极度匮乏。战士挖野菜、煮皮带，许多人陷入泥潭或冻饿牺牲。红军以顽强意志走出草地，进入甘南。',
-      strategy: '选择人迹罕至的草地是出敌不意，但后勤风险极高。向导、路线与粮食管理决定部队存亡，这是以空间和意志换取战略主动的艰难抉择。',
-      spirit: '理想信念、同甘共苦、团结互助、革命乐观主义。草地没有路，队伍用信念走出了路。'
-    }
   },
 
   {
@@ -1725,22 +1741,129 @@ const LEVELS = [
         note: '会宁会师后，红军主力实现战略集中，并着手统一整编与指挥。随后红四方面军一部奉命西渡黄河，开始新的作战行动。会师不是终点，而是革命力量重新集结的起点。'
       }
     },
-    artifact: {
-      id: 'huining-jishi',
-      name: '会宁会师纪事',
-      stage: '会宁 · 1936',
-      emblem: '会',
-      era: '红军会师 · 1936年10月',
-      history: '1936年10月，红一、红二、红四方面军在甘肃会宁、静宁将台堡等地会师，长征胜利结束。红军总行程二万五千里，跨越十余省，翻越数十座大山，渡过数十条河流。',
-      strategy: '会师实现了红军主力的战略集中，为中国革命新局面的开创保存了骨干力量。长征的胜利，是战略转移、政治动员、组织重构与民心凝聚的综合结果。',
-      spirit: '坚定信念、不怕牺牲、独立自主、实事求是、顾全大局、严守纪律、紧密团结、依靠群众。长征精神，是中国共产党人精神谱系中永不褪色的一页。'
-    }
+  }
+];
+
+/* ============================================================
+   信物藏品：七件手记/信物，全部直接散落在对应关卡沙盘上
+   拾取规则：走进金色藏品点位即可拾取；不要求完成小游戏，
+   不要求通关，也不改变主线剧情、问答选项与关卡推进。
+   ============================================================ */
+const COLLECTIBLES = [
+  {
+    id: 'ban-tiao-beizi',
+    no: 1,
+    levelId: 'ruijin',
+    name: '半条被子',
+    type: '遗落信物',
+    emblem: '被',
+    stage: '长征出发 · 沙洲村 · 1934',
+    place: '民居角落',
+    x: 0.165,
+    y: 0.655,
+    body: '油灯昏黄，剪刀划开棉被。半床棉絮留给乡亲，另一半伴着红军走向险路。',
+    line: '舍己赠暖，心系百姓。',
+    imageDesc: '破旧土屋，三名女红军剪开被子，老乡站在一旁。'
+  },
+  {
+    id: 'xiangjiang-shouji',
+    no: 2,
+    levelId: 'xiangjiang',
+    name: '湘江战地手记',
+    type: '战地手记',
+    emblem: '血',
+    stage: '湘江战役 · 1934',
+    place: '江边战壕残迹',
+    x: 0.395,
+    y: 0.700,
+    body: '子弹撞在他身上。枪杆扎进泥中勉强支撑，血浸透粗布军装。泥潭接住他倒下的身躯，眼珠凝望着江的对岸，指节锁死在枪身。',
+    line: '眼望征途，血染江泥。',
+    imageDesc: '湘江岸边战壕，江水暗红，遍地牺牲的战士。'
+  },
+  {
+    id: 'luding-shouji',
+    no: 3,
+    levelId: 'luding',
+    name: '泸定桥战地手记',
+    type: '战地手记',
+    emblem: '勇',
+    stage: '飞夺泸定桥 · 1935',
+    place: '铁索桥头遗迹',
+    x: 0.655,
+    y: 0.505,
+    body: '你亲眼看见身边战友在铁索冲锋，中弹坠落，被轰鸣河水吞没，再无声息。',
+    line: '坠于浪，声永寂。',
+    imageDesc: '悬空铁索横跨湍急大河，木板残缺，硝烟弥漫，战士在铁索上匍匐冲锋，脚下河水翻涌。'
+  },
+  {
+    id: 'jiajin-junxu',
+    no: 4,
+    levelId: 'jiajinshan',
+    name: '军需处长',
+    type: '战地手记',
+    emblem: '雪',
+    stage: '翻越夹金山 · 1935',
+    place: '雪山岩石旁',
+    x: 0.345,
+    y: 0.735,
+    body: '风雪裹住山野。老战士安坐雪地，棉衣早已分给战友，冰雪覆上他的眉眼。',
+    line: '掌衣者，无棉衣。',
+    imageDesc: '茫茫大雪，雪地上静坐的冻僵战士，远山白茫茫。'
+  },
+  {
+    id: 'caodi-yugou',
+    no: 5,
+    levelId: 'caodi',
+    name: '金色鱼钩',
+    type: '遗落信物',
+    emblem: '鱼',
+    stage: '川西草地 · 1935',
+    place: '水洼边',
+    x: 0.185,
+    y: 0.700,
+    body: '缝衣针弯成钩，在死水洼垂钓。鱼汤喂给伤员，老班长嚼着草根，托住后生的生路。',
+    line: '以命相护，托举后生。',
+    imageDesc: '草地水洼，老班长俯身，手中一枚自制鱼钩。'
+  },
+  {
+    id: 'caodi-pidai',
+    no: 6,
+    levelId: 'caodi',
+    name: '半截皮带',
+    type: '遗落信物',
+    emblem: '带',
+    stage: '川西草地后半段 · 1935',
+    place: '篝火遗迹旁',
+    x: 0.665,
+    y: 0.720,
+    body: '草地饥荒蔓延。皮带下锅煮食，一截被留存，刻着奔赴延安的执念。',
+    line: '怀志西行，奔赴延安。',
+    imageDesc: '昏暗篝火旁，战士手中握着一截旧皮带。'
+  },
+  {
+    id: 'huining-shouji',
+    no: 7,
+    levelId: 'huining',
+    name: '会师战地手记',
+    type: '战地手记',
+    emblem: '会',
+    stage: '会宁会师 · 1936',
+    place: '会师石碑旁',
+    x: 0.545,
+    y: 0.485,
+    body: '千山踏破，黄土高原上红旗相聚。无数英魂，守着这条漫长道路。',
+    line: '踏尽山河，终得会师。',
+    imageDesc: '黄土高原，多支红军队伍会师，旗帜林立。'
   }
 ];
 
 const LEVEL_BY_ID = Object.fromEntries(LEVELS.map(level => [level.id, level]));
-const ARTIFACTS = LEVELS.map(level => level.artifact);
+const ARTIFACTS = COLLECTIBLES;
 const ARTIFACT_BY_ID = Object.fromEntries(ARTIFACTS.map(a => [a.id, a]));
+
+function collectiblesForLevel(level) {
+  return COLLECTIBLES.filter(item => item.levelId === level.id);
+}
 
 // 三选一在界面上的轮换：让资源回报较优的方案均匀分布在 A/B/C
 const QA_OPTION_SHIFTS = {
@@ -2531,8 +2654,8 @@ function updateHomeUI() {
     const lvl = getLevel(save.levelIndex);
     const unlocked = (save.unlocked || []).length;
     text.textContent = save.finished
-      ? `已完成全程 · 史料 ${unlocked}/7 · 可回顾结局`
-      : `存档：第 ${lvl.no} 关 · ${lvl.name} · 史料 ${unlocked}/7`;
+      ? `已完成全程 · 藏品 ${unlocked}/7 · 可回顾结局`
+      : `存档：第 ${lvl.no} 关 · ${lvl.name} · 藏品 ${unlocked}/7`;
     if (label) label.textContent = '重新推演';
   } else {
     continueBtn.hidden = true;
@@ -2577,7 +2700,7 @@ function requestNewGame() {
   if (loadSave()) {
     confirmDialog({
       title: '重新开始推演',
-      text: '当前已有一份长征存档。重新推演将覆盖原存档，所有资源、关卡进度与已解锁史料都会重置。',
+      text: '当前已有一份长征存档。重新推演将覆盖原存档，所有资源、关卡进度与已拾取藏品都会重置。',
       confirmText: '覆盖并重新开始',
       onConfirm: beginNewGame
     });
@@ -2623,7 +2746,7 @@ function updateHUD() {
 
   const route = $('#chapterRoute');
   route.innerHTML = LEVELS.map((level, index) => {
-    const done = index < state.levelIndex || (level.id === lvl.id && state.unlocked.includes(level.artifact.id));
+    const done = index < state.levelIndex || (level.id === lvl.id && progress.main && progress.side);
     const now = index === state.levelIndex;
     return `<span class="r-dot ${done ? 'done' : ''} ${now ? 'now' : ''}">${level.name}</span>` +
       (index < LEVELS.length - 1 ? '<span class="r-line"></span>' : '');
@@ -2635,7 +2758,7 @@ function updateHUD() {
   if (lvl.mini) {
     chips.push(`<span class="obj-chip mini ${progress.mini ? 'done' : ''}"><b>${lvl.mini.pointName}</b>${progress.mini ? '<span class="tick">✓</span>' : '· 可选'}</span>`);
   }
-  chips.push(`<span class="obj-chip"><b>史料</b>${state.unlocked.length}/7</span>`);
+  chips.push(`<span class="obj-chip"><b>藏品</b>${state.unlocked.length}/7</span>`);
   $('#objectiveChips').innerHTML = chips.join('');
 
   for (const key of Object.keys(RESOURCE_META)) {
@@ -2838,6 +2961,9 @@ function openPause() {
           <button class="btn btn-primary" id="pauseResume" type="button">
             <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19V5l14 7-14 7z"/></svg>继续行军
           </button>
+          ${progress.main && progress.side ? `<button class="btn" id="pauseNext" type="button">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>${state.levelIndex === LEVELS.length - 1 ? '完成长征 · 走向会宁' : '继续行军 · 下一关'}
+          </button>` : ''}
           <button class="btn" id="pauseArchive" type="button">
             <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h7v15H4zM13 5h7v15h-7z"/></svg>史料展览馆
           </button>
@@ -2854,7 +2980,7 @@ function openPause() {
           <span class="vol-num">${Math.round(settings.volume * 100)}</span>
           <button class="btn btn-quiet" id="pauseMuteBtn" type="button">${settings.muted ? '开启声音' : '静音'}</button>
         </div>
-        <div class="pause-info"><b>提示：</b>完成每关的主线与支线事件后，会解锁一件史料藏品。分支推演为可选事件，失败只会损耗资源，不会结束游戏。</div>
+        <div class="pause-info"><b>提示：</b>沙盘上的金色点位为可选藏品，走近即可拾取，不影响主线、问答与关卡推进。分支推演失败只会损耗资源，不会结束游戏。</div>
       </div>
       <div class="panel-foot">
         <button class="btn btn-quiet" id="pauseHome" type="button">保存并返回首页</button>
@@ -2870,6 +2996,16 @@ function openPause() {
   $('#pauseArchive').addEventListener('click', () => { closeOverlay(); openArchive(); });
   $('#pauseHelp').addEventListener('click', () => { closeOverlay(); openHelp(); });
   $('#pauseRestart').addEventListener('click', () => { closeOverlay(); requestRestartLevel(); });
+  const pauseNext = $('#pauseNext');
+  if (pauseNext) pauseNext.addEventListener('click', () => {
+    closeOverlay();
+    if (state.levelIndex === LEVELS.length - 1) {
+      startEnding();
+    } else {
+      audio.sfx('open');
+      advanceLevel();
+    }
+  });
   $('#pauseHome').addEventListener('click', () => { closeOverlay(); saveGame(); showHome(); });
   const pauseVolume = $('#pauseVolume');
   if (pauseVolume) pauseVolume.addEventListener('input', event => {
@@ -2898,11 +3034,11 @@ function openHelp() {
         <section class="help-section">
           <h3>在沙盘上行走</h3>
           <div class="help-keys"><span class="kbd">W</span><span class="kbd">A</span><span class="kbd">S</span><span class="kbd">D</span><span class="kbd">方向键</span></div>
-          <p>控制红军小队在沙盘上移动。碰到浅色圆圈即可触发主线、支线或分支推演。靠近点位时会出现“抵达触发事件”提示。移动端可使用页面底部的虚拟方向键。</p>
+          <p>控制红军小队在沙盘上移动。碰到浅色圆圈即可触发主线、支线或分支推演。金色菱形为藏品点位，走近即可拾取，不影响关卡推进。移动端可使用页面底部的虚拟方向键。</p>
           <h3 style="margin-top:19px">问答与资源</h3>
           <p>每个关卡包含一段主线问答与一段支线问答。选项没有绝对标准答案，不同选择会改变兵员、粮食与弹药。三项资源跨关卡保留，任意资源最低保留 <strong>5</strong> 点，不会归零。</p>
           <ul>
-            <li>完成主线与支线后，解锁本关史料藏品。</li>
+            <li>主线与支线完成后即可继续行军；藏品为可选收集，不影响关卡推进。</li>
             <li>分支推演为可选事件，失败只扣资源，不会游戏结束。</li>
             <li>史料展览馆可随时从右上角打开。</li>
           </ul>
@@ -2913,7 +3049,7 @@ function openHelp() {
             <tr><td>打字御敌</td><td>输入词语 + Enter</td></tr>
             <tr><td>铁索跑酷</td><td>↑ / W / 空格跳跃，↓ / S 下蹲</td></tr>
             <tr><td>雪山落雪</td><td>方向键自由移动</td></tr>
-            <tr><td>沼泽迷宫</td><td>方向键逐格移动</td></tr>
+            <tr><td>沼泽迷宫</td><td>方向键逐格移动 · 撞墙退回起点</td></tr>
           </table>
           <div class="help-tip">小游戏限时 20–30 秒，倒计时显示在界面上方。每个小游戏都有【退出返回沙盘】按钮，随时可以离开，不会卡死。</div>
           <h3 style="margin-top:19px">音量与存档</h3>
@@ -2937,7 +3073,7 @@ function requestRestartLevel() {
   const lvl = getLevel();
   confirmDialog({
     title: '重新开始本局',
-    text: `将回到【${lvl.name}】进入时的资源状态，本关主线、支线与分支推演进度都会重置。已获得的史料不会丢失。`,
+    text: `将回到【${lvl.name}】进入时的资源状态，本关主线、支线与分支推演进度都会重置。已拾取的藏品不会丢失。`,
     confirmText: '确认重开',
     onConfirm: () => restartLevel()
   });
@@ -2947,7 +3083,6 @@ function restartLevel() {
   const lvl = getLevel();
   state.resources = clone(state.entryResources || levelStartResources);
   state.progress[lvl.id] = { main: false, side: false, mini: false };
-  state.unlocked = state.unlocked.filter(id => id !== lvl.artifact.id);
   miniState = null;
   hideNearHint();
   updateHUD();
@@ -2983,14 +3118,7 @@ function enterLevel(index, options = {}) {
   setTimeout(() => {
     if (state.screen !== 'game' || overlayKind || miniState) return;
     const p = getProgress(lvl);
-    if (p.main && p.side) {
-      if (!state.unlocked.includes(lvl.artifact.id)) {
-        state.unlocked.push(lvl.artifact.id);
-        saveGame();
-        updateHUD();
-      }
-      openArtifactUnlock(lvl);
-    }
+    if (p.main && p.side) openLevelComplete(lvl);
   }, 850);
 }
 
@@ -3009,55 +3137,56 @@ function checkLevelCompletion() {
   const lvl = getLevel();
   const p = getProgress(lvl);
   if (!(p.main && p.side)) return false;
-  if (state.unlocked.includes(lvl.artifact.id)) return false;
-  state.unlocked.push(lvl.artifact.id);
-  saveGame();
-  updateHUD();
-  audio.sfx('unlock');
-  setTimeout(() => {
-    if (state.screen === 'game' && !overlayKind && !miniState) openArtifactUnlock(lvl);
-  }, 300);
+  if (overlayKind) return false;
+  openLevelComplete(lvl);
   return true;
 }
 
-function openArtifactUnlock(lvl) {
+/* 关卡完成只负责推进，不再发放藏品 */
+function openLevelComplete(lvl) {
   if (overlayKind) return;
+  initAudioOnGesture();
+  audio.setScene('qa');
+  audio.sfx('open');
   const isFinal = state.levelIndex === LEVELS.length - 1;
-  const a = lvl.artifact;
+  const p = getProgress(lvl);
+  const items = collectiblesForLevel(lvl);
+  const got = items.filter(a => state.unlocked.includes(a.id)).length;
   const html = `
-    <article class="panel" role="dialog" aria-modal="true" aria-labelledby="unlockTitle">
+    <article class="panel level-panel" role="dialog" aria-modal="true" aria-labelledby="levelTitle">
       <header class="panel-head">
         <div>
-          <div class="kicker left" style="margin-bottom:7px">史料入藏 · 第 ${state.unlocked.length}/7 件</div>
-          <h2 id="unlockTitle">${a.name}</h2>
-          <p>${a.stage} · 完成本关主线与支线推演</p>
+          <div class="kicker left" style="margin-bottom:7px">关卡推演完成 · 第 ${lvl.no}/07 关</div>
+          <h2 id="levelTitle">${lvl.name}</h2>
+          <p>${lvl.dateLong} · ${lvl.region}</p>
         </div>
       </header>
       <div class="panel-body">
-        <div class="artifact-sections" style="margin-top:2px">
-          <div class="a-section">
-            <div class="a-section-label">史实<small>HISTORY</small></div>
-            <p>${a.history}</p>
-          </div>
-          <div class="a-section">
-            <div class="a-section-label">战略<small>STRATEGY</small></div>
-            <p>${a.strategy}</p>
-          </div>
-          <div class="a-section">
-            <div class="a-section-label">精神<small>SPIRIT</small></div>
-            <p>${a.spirit}</p>
-          </div>
+        <p class="small-copy">主线与支线推演均已完成，部队可以继续行军。沙盘上的金色点位为<b>可选藏品</b>，未拾取也不会影响关卡推进与最终评价。</p>
+        <div class="level-progress">
+          <span class="done">主线 · 已完成</span>
+          <span class="done">支线 · 已完成</span>
+          ${lvl.mini ? `<span>${lvl.mini.pointName} · ${p.mini ? '已完成' : '未完成（可选）'}</span>` : ''}
+          ${items.length ? `<span>本关藏品 · ${got}/${items.length}</span>` : '<span>本关无藏品点位</span>'}
+          <span>藏品总计 · ${state.unlocked.length}/${ARTIFACTS.length}</span>
         </div>
+        <p class="level-tip">提示：进入下一关后，仍可通过右上角的“史料展览馆”重读已拾取的手记与信物。</p>
       </div>
       <div class="panel-foot">
-        <button class="btn" id="unlockArchive" type="button">查看全部史料</button>
-        <button class="btn btn-primary" id="unlockNext" type="button">${isFinal ? '完成长征 · 走向会宁' : '继续行军 · 前往下一关'}</button>
+        <button class="btn" id="levelArchive" type="button">查看藏品</button>
+        <button class="btn" id="levelExplore" type="button">继续探索沙盘</button>
+        <button class="btn btn-primary" id="levelNext" type="button">${isFinal ? '完成长征 · 走向会宁' : '继续行军 · 前往下一关'}</button>
       </div>
     </article>
   `;
-  showOverlay(html, 'artifact', { focus: '#unlockNext' });
-  $('#unlockArchive').addEventListener('click', () => openArchive({ returnToArtifact: true }));
-  $('#unlockNext').addEventListener('click', () => {
+  showOverlay(html, 'levelcomplete', { focus: '#levelNext' });
+  $('#levelArchive').addEventListener('click', () => openArchive({ returnToLevelComplete: true }));
+  $('#levelExplore').addEventListener('click', () => {
+    closeOverlay();
+    audio.sfx('close');
+    toast('已返回沙盘 · 可继续寻找藏品，按 P 暂停后可选择继续行军');
+  });
+  $('#levelNext').addEventListener('click', () => {
     closeOverlay();
     audio.sfx('close');
     if (isFinal) {
@@ -3067,6 +3196,52 @@ function openArtifactUnlock(lvl) {
     }
   });
 }
+
+/* 走到藏品点位即自动拾取；不经过问答、小游戏或关卡结算 */
+function collectArtifact(item) {
+  if (!item || state.unlocked.includes(item.id)) return;
+  state.unlocked.push(item.id);
+  saveGame();
+  updateHUD();
+  hideNearHint();
+  audio.sfx('unlock');
+  openPickup(item);
+}
+
+function openPickup(item) {
+  if (!item || overlayKind) return;
+  initAudioOnGesture();
+  audio.setScene('qa');
+  const index = ARTIFACTS.findIndex(a => a.id === item.id) + 1;
+  const html = `
+    <article class="panel pickup-panel" role="dialog" aria-modal="true" aria-labelledby="pickupTitle">
+      <header class="panel-head">
+        <div>
+          <div class="kicker left" style="margin-bottom:7px">拾得藏品 · ${state.unlocked.length}/${ARTIFACTS.length} · 第 ${String(index).padStart(2, '0')} 件</div>
+          <h2 id="pickupTitle">${item.name}</h2>
+          <p>${item.type} · ${item.stage} · 拾取点位：${item.place}</p>
+        </div>
+        <button class="panel-close" id="pickupCloseX" type="button" aria-label="关闭">×</button>
+      </header>
+      <div class="panel-body">
+        ${artifactFigureHTML(item, 'pickup-figure')}
+        <p class="pickup-body">${item.body}</p>
+        <p class="artifact-line pickup-line">${item.line}</p>
+        <p class="pickup-note">藏品为可选收集，已收入史料展览馆。拾取不会改变资源、主线剧情、问答选项或关卡推进。</p>
+      </div>
+      <div class="panel-foot">
+        <button class="btn" id="pickupArchive" type="button">查看藏品</button>
+        <button class="btn btn-primary" id="pickupContinue" type="button">收入行囊 · 继续行军</button>
+      </div>
+    </article>
+  `;
+  showOverlay(html, 'pickup', { focus: '#pickupContinue' });
+  const close = () => { closeOverlay(); audio.sfx('close'); };
+  $('#pickupCloseX').addEventListener('click', close);
+  $('#pickupContinue').addEventListener('click', close);
+  $('#pickupArchive').addEventListener('click', () => openArchive());
+}
+
 
 
 /* ============================================================
@@ -3117,6 +3292,7 @@ const mapRuntime = {
   keys: { up: false, down: false, left: false, right: false },
   touch: { up: false, down: false, left: false, right: false },
   nearPoint: null,
+  nearArtifact: null,
   background: null,
   particles: [],
   lastTime: performance.now(),
@@ -3141,6 +3317,7 @@ function resetMapForLevel(level) {
   mapRuntime.keys = { up: false, down: false, left: false, right: false };
   mapRuntime.touch = { up: false, down: false, left: false, right: false };
   mapRuntime.nearPoint = null;
+  mapRuntime.nearArtifact = null;
   mapRuntime.particles = buildMapParticles(level);
   mapRuntime.background = null;
   hideNearHint();
@@ -3271,8 +3448,8 @@ function paintMapBackground(ctx, w, h, level) {
   ctx.restore();
 
   drawMapLabels(ctx, w, h, p, level);
-
-  // 简陋却好用的指北针
+ 
+ // 简陋却好用的指北针
   drawCompass(ctx, w - 58, h - 84, p, Math.min(w, h) * 0.036);
 
   // 地图内框
@@ -3834,6 +4011,7 @@ function drawMap(time, dt) {
   const points = currentPoints();
   drawAnimatedMapWeather(ctx, w, h, level, time, dt);
   drawMapRoute(ctx, w, h, level, false);
+  drawCollectibles(ctx, w, h, time);
   drawPoints(ctx, w, h, points, time);
   drawPlayer(ctx, w, h, time, dt);
 
@@ -3985,6 +4163,88 @@ function drawPoints(ctx, w, h, points, time) {
     roundRect(ctx, -tw / 2 - padX, labelY - 11, tw + padX * 2, 19, 2);
     ctx.fill();
     ctx.fillStyle = point.done ? 'rgba(235,224,199,.44)' : point.type === 'mini' ? '#c9ddd4' : '#f1dfb7';
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.fillText(label, 0, labelY - 1);
+    ctx.restore();
+  }
+}
+
+function drawCollectibles(ctx, w, h, time) {
+  const level = mapRuntime.level || getLevel();
+  const items = collectiblesForLevel(level);
+  if (!items.length) return;
+  const s = Math.min(w, h);
+  const baseR = Math.max(11, s * 0.019);
+  for (const item of items) {
+    const collected = state.unlocked.includes(item.id);
+    const x = item.x * w;
+    const y = item.y * h;
+    const pulse = (Math.sin(time * 0.003 + item.no * 1.7) + 1) / 2;
+    ctx.save();
+    ctx.translate(x, y);
+
+    if (collected) {
+      ctx.globalAlpha = 0.5;
+      ctx.strokeStyle = 'rgba(78,63,43,.62)';
+      ctx.lineWidth = 1.2;
+      ctx.beginPath();
+      ctx.arc(0, 0, baseR * 0.82, 0, Math.PI * 2);
+      ctx.stroke();
+      ctx.beginPath();
+      ctx.moveTo(-baseR * 0.28, 0);
+      ctx.lineTo(-baseR * 0.05, baseR * 0.22);
+      ctx.lineTo(baseR * 0.32, -baseR * 0.26);
+      ctx.stroke();
+      ctx.restore();
+      continue;
+    }
+
+    // 金色光晕：与主线/支线的浅色圆圈区分
+    ctx.globalAlpha = 0.1 + pulse * 0.1;
+    ctx.fillStyle = '#e7c887';
+    ctx.beginPath();
+    ctx.arc(0, 0, baseR * 2.5, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.globalAlpha = 0.22 + pulse * 0.2;
+    ctx.strokeStyle = '#d8b26c';
+    ctx.lineWidth = 1;
+    ctx.beginPath();
+    ctx.arc(0, 0, baseR * (1.55 + pulse * 0.2), 0, Math.PI * 2);
+    ctx.stroke();
+
+    // 斜置的藏品印
+    ctx.globalAlpha = 1;
+    ctx.save();
+    ctx.rotate(Math.PI / 4);
+    ctx.fillStyle = 'rgba(247,238,213,.95)';
+    ctx.fillRect(-baseR * 0.62, -baseR * 0.62, baseR * 1.24, baseR * 1.24);
+    ctx.strokeStyle = '#8d1714';
+    ctx.lineWidth = 1.6;
+    ctx.strokeRect(-baseR * 0.62, -baseR * 0.62, baseR * 1.24, baseR * 1.24);
+    ctx.strokeStyle = 'rgba(216,178,108,.92)';
+    ctx.lineWidth = 1;
+    ctx.strokeRect(-baseR * 0.8, -baseR * 0.8, baseR * 1.6, baseR * 1.6);
+    ctx.restore();
+
+    ctx.fillStyle = '#7d110e';
+    ctx.font = `700 ${baseR * 0.82}px ${CANVAS_SERIF}`;
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.fillText('藏', 0, baseR * 0.03);
+
+    const label = item.name;
+    ctx.font = `600 ${Math.max(9, Math.min(12, s * 0.014))}px ${CANVAS_SANS}`;
+    const tw = ctx.measureText(label).width;
+    const padX = 8;
+    const labelY = baseR + 13;
+    ctx.fillStyle = 'rgba(36,25,17,.8)';
+    roundRect(ctx, -tw / 2 - padX, labelY - 10, tw + padX * 2, 18, 2);
+    ctx.fill();
+    ctx.strokeStyle = 'rgba(216,178,108,.4)';
+    ctx.lineWidth = 0.8;
+    ctx.stroke();
+    ctx.fillStyle = '#f1dfb7';
     ctx.textAlign = 'center';
     ctx.textBaseline = 'middle';
     ctx.fillText(label, 0, labelY - 1);
@@ -4313,11 +4573,46 @@ function updateMap(dt, time) {
       near = point;
     }
   }
+
+  // 最近的未拾取藏品
+  let nearCollectible = null;
+  let nearCollectibleDist = Infinity;
+  for (const item of collectiblesForLevel(level)) {
+    if (state.unlocked.includes(item.id)) continue;
+    const dxp = item.x * mapRuntime.width - mapRuntime.player.x * mapRuntime.width;
+    const dyp = item.y * mapRuntime.height - mapRuntime.player.y * mapRuntime.height;
+    const dist = Math.hypot(dxp, dyp);
+    if (dist < nearCollectibleDist) {
+      nearCollectibleDist = dist;
+      nearCollectible = item;
+    }
+  }
+
   const nearRadius = Math.max(70, Math.min(112, Math.min(mapRuntime.width, mapRuntime.height) * 0.11));
   const triggerRadius = Math.max(30, Math.min(44, Math.min(mapRuntime.width, mapRuntime.height) * 0.043));
+  const collectRadius = Math.max(32, Math.min(48, Math.min(mapRuntime.width, mapRuntime.height) * 0.048));
+  const collectHintRadius = Math.max(72, Math.min(120, Math.min(mapRuntime.width, mapRuntime.height) * 0.13));
+
   mapRuntime.nearPoint = near && nearDist < nearRadius ? near : null;
+  mapRuntime.nearArtifact = nearCollectible && nearCollectibleDist < collectHintRadius ? nearCollectible : null;
   const hint = $('#nearHint');
-  if (hint) hint.classList.toggle('show', !!mapRuntime.nearPoint);
+  if (hint) {
+    const showCollect = !!mapRuntime.nearArtifact;
+    hint.classList.toggle('show', !!mapRuntime.nearPoint || showCollect);
+    if (showCollect) hint.textContent = `发现藏品 · ${nearCollectible.name}`;
+    else if (mapRuntime.nearPoint) hint.textContent = '抵达触发事件';
+  }
+
+  // 走到藏品点位即拾取，不触发问答/小游戏，也不影响关卡进度
+  if (nearCollectible && nearCollectibleDist < collectRadius) {
+    mapRuntime.keys = { up: false, down: false, left: false, right: false };
+    mapRuntime.touch = { up: false, down: false, left: false, right: false };
+    mapRuntime.moving = false;
+    hideNearHint();
+    collectArtifact(nearCollectible);
+    return;
+  }
+
   if (near && nearDist < triggerRadius) {
     mapRuntime.keys = { up: false, down: false, left: false, right: false };
     mapRuntime.touch = { up: false, down: false, left: false, right: false };
@@ -4418,7 +4713,7 @@ const MINI_INFO = {
   maze: {
     label: '沼泽迷宫',
     control: '方向键 / WASD 逐格移动',
-    help: '避开泥潭，从左上抵达右下出口<br>踩到沼泽会同时损失兵员与粮食',
+    help: '避开泥潭，从左上抵达右下出口<br>踩到沼泽会同时损失兵员与粮食<br>撞上迷宫墙会退回左上起点',
     color: '#7a8b5a'
   }
 };
@@ -4480,7 +4775,7 @@ function openMiniGame(point) {
           <button class="down" type="button" data-mini-dir="down" aria-label="下">▼</button>
           <button class="right" type="button" data-mini-dir="right" aria-label="右">▶</button>
         </div>
-        <div class="mini-control-copy">${cfg.kind === 'snow' ? '在雪坡上自由移动，避开不断滚落的雪球与飘落的雪花。' : '在十乘十的沼泽迷宫中寻找唯一出口，泥潭会同时消耗兵员与粮食。'}</div>
+        <div class="mini-control-copy">${cfg.kind === 'snow' ? '在雪坡上自由移动，避开不断滚落的雪球与飘落的雪花。' : '在十乘十的沼泽迷宫中寻找唯一出口，泥潭会同时消耗兵员与粮食；撞墙会退回左上起点。'}</div>
       </div>`;
   }
 
@@ -4623,7 +4918,8 @@ function setupMiniGame() {
     m.triggers = new Set();
     m.steps = 0;
     m.trapsTriggered = 0;
-    m.stats = { steps: 0, traps: 0 };
+    m.collisions = 0;
+    m.stats = { steps: 0, traps: 0, collisions: 0 };
   }
   m.ready = true;
 }
@@ -4706,11 +5002,10 @@ function updateMiniHud() {
   } else if (m.kind === 'snow') {
     html = `<span class="mini-stat">坚持 <b>${Math.floor(m.elapsed)}s</b></span><span class="mini-stat">被击中 <b>${m.hits}</b></span><span class="mini-stat">兵员损耗 <b>${Math.abs(m.delta.troops)}</b></span>`;
   } else if (m.kind === 'maze') {
-    html = `<span class="mini-stat">步数 <b>${m.steps}</b></span><span class="mini-stat">泥潭 <b>${m.trapsTriggered}</b></span><span class="mini-stat">兵员损耗 <b>${Math.abs(m.delta.troops)}</b></span>`;
+    html = `<span class="mini-stat">步数 <b>${m.steps}</b></span><span class="mini-stat">泥潭 <b>${m.trapsTriggered}</b></span><span class="mini-stat">撞墙 <b>${m.collisions}</b></span><span class="mini-stat">兵员损耗 <b>${Math.abs(m.delta.troops)}</b></span>`;
   }
   line.innerHTML = html;
 }
-
 function tickMini(dt) {
   const m = miniState;
   if (!m || !m.ready || m.over) return;
@@ -4736,7 +5031,6 @@ function tickMini(dt) {
   updateMiniParticles(dt);
   if (m.kind === 'snow' || m.kind === 'maze') updateMiniHud();
 }
-
 function updateMiniParticles(dt) {
   const m = miniState;
   if (!m) return;
@@ -4754,7 +5048,6 @@ function updateMiniParticles(dt) {
     return f.life > 0;
   });
 }
-
 function addMiniParticles(x, y, color, count = 14, spread = 160) {
   const m = miniState;
   if (!m) return;
@@ -4775,13 +5068,11 @@ function addMiniParticles(x, y, color, count = 14, spread = 160) {
     });
   }
 }
-
 function addMiniFloat(text, x, y, color = '#ffd6a0') {
   const m = miniState;
   if (!m) return;
   m.floats.push({ text, x, y, color, life: 1.1 });
 }
-
 function miniDamage(effects, x, y, label) {
   const m = miniState;
   if (!m) return;
@@ -4793,7 +5084,6 @@ function miniDamage(effects, x, y, label) {
   audio.sfx('hit');
   updateMiniHud();
 }
-
 function timeExpired() {
   const m = miniState;
   if (!m || m.over) return;
@@ -4829,7 +5119,6 @@ function timeExpired() {
     });
   }
 }
-
 /* ---------------- 打字御敌 ---------------- */
 function updateTyping(dt) {
   const m = miniState;
@@ -4863,7 +5152,6 @@ function updateTyping(dt) {
     finishTyping();
   }
 }
-
 function spawnTypingEnemy() {
   const m = miniState;
   const active = new Set(m.enemies.map(e => e.word));
@@ -4885,7 +5173,6 @@ function spawnTypingEnemy() {
   m.spawned++;
   m.stats.spawned = m.spawned;
 }
-
 function submitTyping() {
   const m = miniState;
   if (!m || !m.ready || m.over || m.kind !== 'typing' || !m.enemies) return;
@@ -4923,7 +5210,6 @@ function submitTyping() {
     finishTyping();
   }
 }
-
 function finishTyping() {
   const m = miniState;
   if (!m || m.over) return;
@@ -4944,7 +5230,6 @@ function finishTyping() {
     quote: '湘江血战，后卫部队以血肉之躯掩护中央纵队渡江。每一道防线，都是战士用生命换来的时间。'
   });
 }
-
 function drawTyping(ctx, m) {
   const w = m.width;
   const h = m.height;
@@ -4954,7 +5239,6 @@ function drawTyping(ctx, m) {
   bg.addColorStop(1, '#3a2118');
   ctx.fillStyle = bg;
   ctx.fillRect(0, 0, w, h);
-
   // 远山与江面
   ctx.save();
   ctx.fillStyle = 'rgba(16,34,35,.65)';
@@ -4979,7 +5263,6 @@ function drawTyping(ctx, m) {
     ctx.stroke();
   }
   ctx.restore();
-
   // 探照灯
   ctx.save();
   const sweep = (Math.sin(m.elapsed * 0.55) + 1) / 2;
@@ -4996,7 +5279,6 @@ function drawTyping(ctx, m) {
   ctx.closePath();
   ctx.fill();
   ctx.restore();
-
   // 敌人
   for (const enemy of m.enemies) {
     drawTypingEnemy(ctx, enemy, m);
@@ -5971,6 +6253,24 @@ function solveMaze(cells, N, start, end) {
 function updateMaze() {
   // 迷宫只在按键时更新，被动状态下无需逐帧处理
 }
+function mazeBounceBack(m) {
+  const N = m.maze.N;
+  const cs = Math.min((m.width - 46) / N, (m.height - 76) / N);
+  const ox = (m.width - cs * N) / 2;
+  const oy = (m.height - cs * N) / 2 + 12;
+  const cx = ox + m.cell.c * cs + cs / 2;
+  const cy = oy + m.cell.r * cs + cs / 2;
+  m.cell = { r: 0, c: 0 };
+  m.visited.add('0,0');
+  m.collisions++;
+  m.stats.collisions = m.collisions;
+  m.shake = 8;
+  m.flash = 0.15;
+  addMiniParticles(cx, cy, '#8b3a2e', 16, 120);
+  addMiniFloat('撞墙 · 退回起点', cx, cy - cs * 0.4, '#ffb08f');
+  audio.sfx('wrong');
+  updateMiniHud();
+}
 function moveMaze(direction) {
   const m = miniState;
   if (!m || !m.ready || !m.maze || m.over || m.kind !== 'maze') return;
@@ -5981,12 +6281,15 @@ function moveMaze(direction) {
   const N = m.maze.N;
   const current = m.cell.r * N + m.cell.c;
   if (m.maze.cells[current].walls[wall]) {
-    audio.sfx('wrong');
+    mazeBounceBack(m);
     return;
   }
   const nr = m.cell.r + dr;
   const nc = m.cell.c + dc;
-  if (nr < 0 || nr >= N || nc < 0 || nc >= N) return;
+  if (nr < 0 || nr >= N || nc < 0 || nc >= N) {
+    mazeBounceBack(m);
+    return;
+  }
   m.cell = { r: nr, c: nc };
   m.steps++;
   m.stats.steps = m.steps;
@@ -6007,7 +6310,7 @@ function moveMaze(direction) {
     finishMini({
       success: true,
       title: '走出沼泽',
-      desc: `你用 ${m.steps} 步穿过这片泥沼，途中踩中 ${m.trapsTriggered} 处沼泽。前方，草地的边际终于出现。`,
+      desc: `你用 ${m.steps} 步穿过这片泥沼，途中踩中 ${m.trapsTriggered} 处沼泽，撞墙退回起点 ${m.collisions} 次。前方，草地的边际终于出现。`,
       quote: '草地上的每一步都可能是最后一步。走出泥沼，靠的不只是方向，更是彼此的扶持。'
     });
   }
@@ -6321,31 +6624,362 @@ function handleMiniKeyUp(event) {
 /* ============================================================
    史料展览馆、结局字幕、通关评价、启动
    ============================================================ */
+function artifactFigureHTML(artifact, extraClass = '') {
+  const index = ARTIFACTS.findIndex(a => a.id === artifact.id) + 1;
+  return `
+    <figure class="artifact-figure ${extraClass}">
+      <div class="artifact-image">
+        ${artifactSceneSVG(artifact)}
+        <span class="ai-type">${artifact.type}</span>
+        <span class="ai-index">FIG. 0${index}</span>
+      </div>
+      <figcaption><b>配图描述</b>${artifact.imageDesc}</figcaption>
+    </figure>
+  `;
+}
+/* 藏品配图：全部由内联 SVG 代码绘制，不引入外部网络链接，保证单文件离线运行 */
+function artifactSceneSVG(artifact) {
+  const u = artifact.id.replace(/[^a-z0-9]/gi, '');
+  const vignette = `<defs><radialGradient id="vig-${u}" cx="50%" cy="45%" r="76%"><stop offset="52%" stop-color="#000" stop-opacity="0"/><stop offset="100%" stop-color="#000" stop-opacity=".6"/></radialGradient></defs><rect width="800" height="450" fill="url(#vig-${u})"/>`;
+  let scene = '';
+  if (artifact.id === 'ban-tiao-beizi') {
+    scene = `
+      <defs>
+        <linearGradient id="wall-${u}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2e1c13"/><stop offset="1" stop-color="#100907"/></linearGradient>
+        <radialGradient id="lamp-${u}" cx="18%" cy="56%" r="62%"><stop offset="0" stop-color="#f7c66d" stop-opacity=".66"/><stop offset=".42" stop-color="#c06a2a" stop-opacity=".18"/><stop offset="1" stop-color="#0d0806" stop-opacity="0"/></radialGradient>
+        <linearGradient id="quilt-${u}" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#b84e38"/><stop offset=".55" stop-color="#7f2a22"/><stop offset="1" stop-color="#4a1814"/></linearGradient>
+        <linearGradient id="bed-${u}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5d3b28"/><stop offset="1" stop-color="#2c1a12"/></linearGradient>
+      </defs>
+      <rect width="800" height="450" fill="url(#wall-${u})"/>
+      <g stroke="#3b251a" stroke-width="2" opacity=".55"><path d="M70 0v450M165 0v450M260 0v450M355 0v450M450 0v450M545 0v450M640 0v450M735 0v450"/></g>
+      <g stroke="#1a0f0b" stroke-width="5" opacity=".42"><path d="M110 0v450M300 0v450M490 0v450M680 0v450"/></g>
+      <rect x="36" y="72" width="96" height="112" fill="#18272b" stroke="#3b251a" stroke-width="7"/>
+      <path d="M84 72v112M36 128h96" stroke="#3b251a" stroke-width="4"/>
+      <circle cx="150" cy="255" r="150" fill="url(#lamp-${u})"/>
+      <path d="M150 312v-56" stroke="#3b251a" stroke-width="4"/>
+      <path d="M132 282c-4-24 8-40 18-40s22 16 18 40c-2 14-9 22-18 22s-16-8-18-22z" fill="#d99b45"/>
+      <path d="M150 250c-7 10-7 20 0 30 7-10 7-20 0-30z" fill="#ffe3a0"/>
+      <ellipse cx="150" cy="315" rx="30" ry="5" fill="#000" opacity=".35"/>
+      <defs>
+        <g id="soldier-${u}">
+          <circle cx="0" cy="-28" r="22" fill="#2f3a33"/>
+          <path d="M-28 -2c8-12 48-12 56 0l8 66h-72z" fill="#2f3a33"/>
+          <path d="M-23 -40c4-14 42-14 46 0l-3 12h-40z" fill="#3e4b41"/>
+          <path d="M-14 -20h28" stroke="#a7241b" stroke-width="4"/>
+          <circle cx="-7" cy="-28" r="2" fill="#d8b26c" opacity=".65"/>
+          <circle cx="7" cy="-28" r="2" fill="#d8b26c" opacity=".65"/>
+        </g>
+        <g id="villager-${u}">
+          <circle cx="0" cy="-32" r="23" fill="#4a3324"/>
+          <path d="M-30 0c10-14 50-14 60 0l12 92h-84z" fill="#4a3324"/>
+          <path d="M-26 -48c8-16 44-16 52 0l-6 18h-40z" fill="#6b4a33"/>
+          <path d="M-18 -18h36" stroke="#8f6b44" stroke-width="3" opacity=".5"/>
+        </g>
+      </defs>
+      <use href="#soldier-${u}" transform="translate(246 300) scale(1.04)"/>
+      <use href="#soldier-${u}" transform="translate(332 298) scale(1.08)"/>
+      <use href="#soldier-${u}" transform="translate(418 300) scale(1.02)"/>
+      <use href="#villager-${u}" transform="translate(632 300) scale(1.08)"/>
+      <rect x="286" y="332" width="244" height="54" rx="4" fill="url(#bed-${u})"/>
+      <path d="M298 334h108v48H298z" fill="url(#quilt-${u})"/>
+      <path d="M410 334h102v48H410z" fill="#d8c49b" opacity=".76"/>
+      <path d="M410 334h102v48H410z" fill="none" stroke="#7d5a3a" stroke-width="2" stroke-dasharray="5 5"/>
+      <g stroke="#e0b98a" stroke-width="1.2" opacity=".48">
+        <path d="M312 344h82M312 356h82M312 368h82M424 344h74M424 356h74M424 368h74"/>
+      </g>
+      <g stroke="#d9c7a2" stroke-width="3" fill="none" stroke-linecap="round">
+        <path d="M458 300l42 26M458 326l42-26"/>
+        <circle cx="450" cy="296" r="7"/><circle cx="450" cy="330" r="7"/>
+      </g>
+      <path d="M508 310c18-4 34 0 44 10" stroke="#d9c7a2" stroke-width="3" fill="none" opacity=".65"/>
+      <path d="M0 414h800v36H0z" fill="#0b0705" opacity=".6"/>
+    `;
+  } else if (artifact.id === 'xiangjiang-shouji') {
+    scene = `
+      <defs>
+        <linearGradient id="sky-${u}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4a3631"/><stop offset=".55" stop-color="#2b1d1b"/><stop offset="1" stop-color="#160d0c"/></linearGradient>
+        <linearGradient id="water-${u}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6b2a24"/><stop offset=".55" stop-color="#431b18"/><stop offset="1" stop-color="#24100f"/></linearGradient>
+        <radialGradient id="flash-${u}" cx="88%" cy="38%" r="22%"><stop offset="0" stop-color="#ffd27a" stop-opacity=".9"/><stop offset="1" stop-color="#ffd27a" stop-opacity="0"/></radialGradient>
+      </defs>
+      <rect width="800" height="450" fill="url(#sky-${u})"/>
+      <g fill="#5a4942" opacity=".38">
+        <ellipse cx="190" cy="92" rx="110" ry="40"/><ellipse cx="330" cy="62" rx="86" ry="30"/>
+        <ellipse cx="610" cy="98" rx="140" ry="44"/><ellipse cx="760" cy="60" rx="90" ry="30"/>
+      </g>
+      <circle cx="700" cy="176" r="110" fill="url(#flash-${u})"/>
+      <path d="M0 208c100-34 210 8 320-8s260-30 480 4v118H0z" fill="#2b211d"/>
+      <path d="M0 250h800v154H0z" fill="url(#water-${u})"/>
+      <g stroke="#b85b45" stroke-width="2" opacity=".42">
+        <path d="M40 292c80-10 140 8 220 0M360 286c90-8 160 10 250 0M120 330c100-8 180 10 280 0M470 344c70-8 150 8 230 0M60 372c90-6 160 8 250 0"/>
+      </g>
+      <path d="M0 384c120-30 210 18 330 2s260-40 470-4v68H0z" fill="#1d1411"/>
+      <g fill="#1a1c18">
+        <path d="M74 366c28-22 70-20 104-2l-8 20H62z"/><circle cx="84" cy="354" r="15"/>
+        <path d="M170 382c24-18 58-16 82 0l-6 18h-76z"/><circle cx="180" cy="372" r="12"/>
+        <path d="M546 370c26-20 64-18 92-2l-8 20h-88z"/><circle cx="556" cy="358" r="14"/>
+      </g>
+      <g>
+        <path d="M358 386c-10-42 10-74 34-92 18-14 38-10 46 4 12 22 4 54-12 74l-8 18z" fill="#242a24"/>
+        <circle cx="404" cy="276" r="24" fill="#2b2f28"/>
+        <path d="M386 264c6-16 34-16 40 0l-4 10h-32z" fill="#3a4036"/>
+        <path d="M414 292c16 22 28 60 26 92" stroke="#2a2f27" stroke-width="12" fill="none"/>
+        <path d="M426 258l38 126" stroke="#5b4530" stroke-width="7" stroke-linecap="round"/>
+        <path d="M430 268l-22 24" stroke="#8a6a45" stroke-width="3"/>
+        <path d="M448 304c16 10 26 26 28 44" stroke="#242a24" stroke-width="14" fill="none"/>
+        <path d="M368 300c-18 16-30 40-34 66" stroke="#242a24" stroke-width="13" fill="none"/>
+      </g>
+      <g stroke="#e6c48b" stroke-width="1.4" opacity=".38">
+        <path d="M620 220L360 320M660 238L420 348M590 252L330 360M700 204L520 300"/>
+      </g>
+      <g fill="#d9533e" opacity=".7">
+        <circle cx="702" cy="182" r="5"/><circle cx="716" cy="190" r="3"/><circle cx="690" cy="194" r="3"/>
+      </g>
+      <path d="M0 414h800v36H0z" fill="#0d0807" opacity=".65"/>
+    `;
+  } else if (artifact.id === 'luding-shouji') {
+    scene = `
+      <defs>
+        <linearGradient id="sky-${u}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6b6257"/><stop offset=".6" stop-color="#403a32"/><stop offset="1" stop-color="#221d18"/></linearGradient>
+        <linearGradient id="river-${u}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4b6b6c"/><stop offset="1" stop-color="#1d2d2e"/></linearGradient>
+        <radialGradient id="muzzle-${u}" cx="86%" cy="42%" r="20%"><stop offset="0" stop-color="#ffd27a" stop-opacity=".9"/><stop offset="1" stop-color="#ffd27a" stop-opacity="0"/></radialGradient>
+      </defs>
+      <rect width="800" height="450" fill="url(#sky-${u})"/>
+      <path d="M0 0h250l-40 120-60 86-50 70-100 54z" fill="#2d2c25"/>
+      <path d="M800 0H570l34 110 54 74 52 78 90 44z" fill="#26251f"/>
+      <path d="M0 330h800v120H0z" fill="url(#river-${u})"/>
+      <g stroke="#c7d6cb" stroke-width="2" opacity=".35">
+        <path d="M40 356c60-10 100 8 160 0M250 376c70-8 120 10 190 0M520 360c60-8 100 8 160 0M120 398c80-8 140 10 220 0M500 410c70-6 130 8 200 0"/>
+      </g>
+      <g fill="#4e4434" opacity=".7">
+        <ellipse cx="170" cy="120" rx="80" ry="28"/><ellipse cx="640" cy="96" rx="90" ry="26"/>
+      </g>
+      <circle cx="690" cy="190" r="100" fill="url(#muzzle-${u})"/>
+      <g fill="none" stroke-linecap="round">
+        <path d="M112 172Q400 306 688 172" stroke="#241c14" stroke-width="6"/>
+        <path d="M112 186Q400 320 688 186" stroke="#241c14" stroke-width="5"/>
+        <path d="M112 200Q400 334 688 200" stroke="#241c14" stroke-width="4"/>
+        <path d="M112 214Q400 348 688 214" stroke="#241c14" stroke-width="3"/>
+      </g>
+      <g stroke="#6b4c2e" stroke-width="9" stroke-linecap="square">
+        <path d="M150 184l34 4"/><path d="M186 193l36 8"/><path d="M224 204l36 10"/><path d="M264 216l34 12"/>
+        <path d="M548 232l34-10"/><path d="M584 220l36-9"/><path d="M622 208l34-9"/><path d="M660 196l30-8"/>
+      </g>
+      <g fill="#1d211c">
+        <path d="M318 226c14-12 36-10 46 2 8 10 2 20-10 22l-42 2z"/>
+        <circle cx="322" cy="220" r="11"/>
+        <path d="M338 238c8 10 8 22 2 32" stroke="#1d211c" stroke-width="7" fill="none"/>
+        <path d="M454 238c14-12 36-10 46 2 8 10 2 20-10 22l-42 2z"/>
+        <circle cx="458" cy="232" r="11"/>
+        <path d="M474 250c8 10 8 22 2 32" stroke="#1d211c" stroke-width="7" fill="none"/>
+      </g>
+      <g fill="#1b1e19" opacity=".9">
+        <circle cx="536" cy="286" r="12"/>
+        <path d="M516 298c18-10 40-8 50 8l10 34-16 10-30-22-26-6z"/>
+        <path d="M520 306c-16 8-26 22-26 38M544 312c14 10 22 24 22 38" stroke="#1b1e19" stroke-width="7" fill="none"/>
+      </g>
+      <g fill="#d9533e" opacity=".8">
+        <circle cx="688" cy="190" r="6"/><circle cx="700" cy="198" r="3"/><circle cx="674" cy="202" r="3"/>
+      </g>
+      <path d="M0 424h800v26H0z" fill="#0b0c0a" opacity=".7"/>
+    `;
+  } else if (artifact.id === 'jiajin-junxu') {
+    scene = `
+      <defs>
+        <linearGradient id="sky-${u}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#c9d2ce"/><stop offset=".55" stop-color="#9eaaa6"/><stop offset="1" stop-color="#6f7b78"/></linearGradient>
+        <linearGradient id="snow-${u}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#eef1e9"/><stop offset="1" stop-color="#b5c0bb"/></linearGradient>
+        <radialGradient id="cold-${u}" cx="50%" cy="44%" r="58%"><stop offset="0" stop-color="#fff" stop-opacity=".18"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
+      </defs>
+      <rect width="800" height="450" fill="url(#sky-${u})"/>
+      <path d="M0 250L120 90l70 90 60-54 90 124 90-104 70 74 90-98 100 128 110-70v270H0z" fill="#8f9c98" opacity=".6"/>
+      <path d="M0 300L150 165l70 70 70-42 90 102 80-76 80 60 100-84 160 96v159H0z" fill="#d9e0d9" opacity=".7"/>
+      <rect y="318" width="800" height="132" fill="url(#snow-${u})"/>
+      <circle cx="400" cy="200" r="180" fill="url(#cold-${u})"/>
+      <g stroke="#f7f8f2" stroke-width="2" opacity=".45">
+        <path d="M40 60l-18 44M120 32l-22 52M210 72l-16 40M300 24l-20 48M420 58l-18 44M520 20l-22 52M620 70l-16 40M720 38l-20 48M90 170l-16 40M250 150l-18 44M660 150l-16 40M760 180l-18 44M150 240l-14 36M560 230l-16 40"/>
+      </g>
+      <g fill="#eef2ec" opacity=".85">
+        <circle cx="80" cy="110" r="2"/><circle cx="180" cy="80" r="1.5"/><circle cx="280" cy="120" r="2"/><circle cx="380" cy="70" r="1.5"/><circle cx="500" cy="110" r="2"/><circle cx="600" cy="80" r="1.5"/><circle cx="720" cy="120" r="2"/><circle cx="240" cy="200" r="1.5"/><circle cx="680" cy="220" r="2"/>
+      </g>
+      <g transform="translate(382 318)">
+        <path d="M-48 44c-20-4-30-26-22-48 8-22 30-34 54-28 24 6 36 30 28 52-6 18-22 28-40 26z" fill="#3c4848"/>
+        <path d="M-30 -34c6-18 38-18 44 0l-4 12h-36z" fill="#53605f"/>
+        <circle cx="-8" cy="-26" r="21" fill="#4a5655"/>
+        <path d="M-48 10c-18 6-28 18-30 34M28 12c16 8 24 20 26 34" stroke="#3c4848" stroke-width="13" fill="none"/>
+        <path d="M-16 44l-12 34M18 44l10 34" stroke="#3c4848" stroke-width="16" stroke-linecap="round"/>
+        <path d="M-24 10h40" stroke="#8e2a22" stroke-width="4" opacity=".6"/>
+        <path d="M-28 -40c10-6 26-6 34 0M-44 12c8 4 18 6 28 6M4 18c10 0 18-2 24-6" stroke="#f2f5ef" stroke-width="4" opacity=".8" fill="none"/>
+        <path d="M-44 78h88" stroke="#aab7b1" stroke-width="4" opacity=".6"/>
+      </g>
+      <g stroke="#4c4030" stroke-width="4" stroke-linecap="round">
+        <path d="M458 380V272"/><path d="M450 366l16-6"/>
+      </g>
+      <g fill="#38413e" opacity=".55">
+        <circle cx="126" cy="284" r="7"/><path d="M116 292l20-4 4 20h-24z"/>
+        <circle cx="154" cy="278" r="6"/><path d="M145 286l18-3 3 18h-21z"/>
+        <circle cx="182" cy="286" r="6"/><path d="M174 293l16-2 2 16h-18z"/>
+      </g>
+      <path d="M0 432h800v18H0z" fill="#f4f6ef" opacity=".6"/>
+    `;
+  } else if (artifact.id === 'caodi-yugou') {
+    scene = `
+      <defs>
+        <linearGradient id="sky-${u}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7d826b"/><stop offset=".55" stop-color="#555d48"/><stop offset="1" stop-color="#2d362a"/></linearGradient>
+        <linearGradient id="pool-${u}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5b7064"/><stop offset="1" stop-color="#273a32"/></linearGradient>
+        <radialGradient id="gold-${u}" cx="45%" cy="74%" r="26%"><stop offset="0" stop-color="#f6d27a" stop-opacity=".72"/><stop offset="1" stop-color="#f6d27a" stop-opacity="0"/></radialGradient>
+      </defs>
+      <rect width="800" height="450" fill="url(#sky-${u})"/>
+      <g fill="#b8bda4" opacity=".14"><ellipse cx="200" cy="90" rx="180" ry="42"/><ellipse cx="580" cy="130" rx="200" ry="50"/></g>
+      <path d="M0 318c120-22 220 12 320-2s240-24 480 2v132H0z" fill="#3d4a38"/>
+      <path d="M0 342c160-16 250 12 390 0s250-16 410 6v102H0z" fill="url(#pool-${u})"/>
+      <g stroke="#b5b99a" stroke-width="2" opacity=".3">
+        <path d="M60 370c70-8 130 8 200 0M300 390c80-8 150 8 230 0M520 360c60-6 110 8 180 0M160 412c70-6 130 6 200 0"/>
+      </g>
+      <g stroke="#4c573f" stroke-width="3" stroke-linecap="round" opacity=".85">
+        <path d="M70 330c-6-54 4-92 22-126M84 330c4-48 18-84 38-112M110 332c2-40 10-72 24-98M690 322c-4-44 6-76 20-100M708 326c6-38 18-66 34-88M664 326c0-34 8-62 20-84"/>
+      </g>
+      <circle cx="360" cy="338" r="110" fill="url(#gold-${u})"/>
+      <g stroke="#e4bd6a" fill="none" stroke-linecap="round">
+        <path d="M360 282v58c0 24 40 24 40 0v-12" stroke-width="8"/>
+        <path d="M400 328l-12 16" stroke-width="6"/>
+        <circle cx="388" cy="328" r="4" fill="#f6d27a" stroke="none"/>
+      </g>
+      <path d="M500 262c38 22 62 50 74 84" stroke="#d8c7a0" stroke-width="1.4" fill="none" opacity=".9"/>
+      <g transform="translate(566 306)" fill="#39422f">
+        <path d="M-34 4c-10 24-6 48 10 62h60c10-24 4-46-12-62z"/>
+        <circle cx="-2" cy="-26" r="20"/>
+        <path d="M-22 -38c4-14 36-14 40 0l-3 10h-34z" fill="#4d5741"/>
+        <path d="M-24 6c-12 18-16 36-14 54" stroke="#39422f" stroke-width="12" fill="none" stroke-linecap="round"/>
+        <path d="M22 16c26-4 46-18 58-38" stroke="#39422f" stroke-width="11" fill="none" stroke-linecap="round"/>
+        <path d="M58 -18l14-10" stroke="#c9a875" stroke-width="4" stroke-linecap="round"/>
+      </g>
+      <g fill="#8c916f" opacity=".5">
+        <ellipse cx="240" cy="352" rx="54" ry="10"/><ellipse cx="640" cy="380" rx="48" ry="9"/><ellipse cx="120" cy="392" rx="40" ry="8"/>
+      </g>
+      <path d="M0 434h800v16H0z" fill="#151c15" opacity=".6"/>
+    `;
+  } else if (artifact.id === 'caodi-pidai') {
+    scene = `
+      <defs>
+        <linearGradient id="night-${u}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1b2420"/><stop offset=".65" stop-color="#101713"/><stop offset="1" stop-color="#070a08"/></linearGradient>
+        <radialGradient id="fire-${u}" cx="50%" cy="72%" r="42%"><stop offset="0" stop-color="#ffb45c" stop-opacity=".8"/><stop offset=".45" stop-color="#c85a2a" stop-opacity=".24"/><stop offset="1" stop-color="#7a2a16" stop-opacity="0"/></radialGradient>
+      </defs>
+      <rect width="800" height="450" fill="url(#night-${u})"/>
+      <g fill="#dfe6d8" opacity=".65">
+        <circle cx="80" cy="52" r="1.5"/><circle cx="160" cy="90" r="1"/><circle cx="240" cy="40" r="1.4"/><circle cx="340" cy="76" r="1"/><circle cx="470" cy="46" r="1.3"/><circle cx="560" cy="92" r="1"/><circle cx="650" cy="38" r="1.4"/><circle cx="740" cy="82" r="1"/><circle cx="700" cy="140" r="1"/><circle cx="110" cy="150" r="1"/>
+      </g>
+      <circle cx="400" cy="330" r="190" fill="url(#fire-${u})"/>
+      <path d="M0 380c120-12 220 8 330-2s240-12 470 4v68H0z" fill="#181f17"/>
+      <g stroke="#2f2618" stroke-width="10" stroke-linecap="round">
+        <path d="M342 372l116-20M352 382l100 4M362 390l78-32"/>
+      </g>
+      <g fill="none" stroke-linecap="round">
+        <path d="M400 368c-18-32 12-56 4-84 26 22 40 54 20 86z" fill="#d4552a" stroke="#ffb45c" stroke-width="4"/>
+        <path d="M410 362c-8-22 8-38 4-54 14 16 20 36 8 54z" fill="#ffcf72" stroke="#ffe3a0" stroke-width="2"/>
+      </g>
+      <g fill="#e7b45f" opacity=".7">
+        <circle cx="360" cy="280" r="2"/><circle cx="442" cy="254" r="1.5"/><circle cx="468" cy="300" r="2"/><circle cx="330" cy="320" r="1.5"/>
+      </g>
+      <g transform="translate(540 318)" fill="#262a20">
+        <path d="M-28 14c-8 26-2 46 12 56h52c8-24 2-44-10-56z"/>
+        <circle cx="0" cy="-24" r="20"/>
+        <path d="M-20 -36c4-13 36-13 40 0l-3 10h-34z" fill="#363b2b"/>
+        <path d="M-8 18c22-4 42-14 54-28" stroke="#262a20" stroke-width="11" fill="none" stroke-linecap="round"/>
+      </g>
+      <g stroke-linecap="round" fill="none">
+        <path d="M558 278c32-22 74-16 104 12" stroke="#8a5a32" stroke-width="15"/>
+        <path d="M558 278c32-22 74-16 104 12" stroke="#c08a4e" stroke-width="4" opacity=".65"/>
+        <path d="M584 286l2-6M606 282l2-6M628 282l2-6M650 286l2-6" stroke="#3a2414" stroke-width="5"/>
+        <rect x="650" y="280" width="20" height="14" rx="2" stroke="#d8b26c" stroke-width="3"/>
+      </g>
+      <g fill="#20241b" opacity=".9">
+        <circle cx="250" cy="374" r="12"/><path d="M228 386c18-12 44-10 58 4l-4 18h-56z"/>
+        <circle cx="318" cy="388" r="10"/><path d="M298 398c16-10 38-8 50 4l-4 16h-48z"/>
+      </g>
+      <g stroke="#3c4631" stroke-width="2" stroke-linecap="round" opacity=".55">
+        <path d="M60 398c-2-34 4-58 14-78M80 400c2-28 10-50 22-66M700 392c-2-30 6-52 16-70M724 396c4-24 14-42 26-56"/>
+      </g>
+    `;
+  } else if (artifact.id === 'huining-shouji') {
+    scene = `
+      <defs>
+        <linearGradient id="sky-${u}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d9a35e"/><stop offset=".55" stop-color="#b97643"/><stop offset="1" stop-color="#7a4328"/></linearGradient>
+        <radialGradient id="sun-${u}" cx="50%" cy="58%" r="42%"><stop offset="0" stop-color="#ffe2a0" stop-opacity=".7"/><stop offset="1" stop-color="#ffe2a0" stop-opacity="0"/></radialGradient>
+        <linearGradient id="loess-${u}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#c7975b"/><stop offset="1" stop-color="#8a5c34"/></linearGradient>
+        <g id="flag-${u}">
+          <path d="M0 0v-86" stroke="#3a2818" stroke-width="4"/>
+          <path d="M2 -84c26-8 52-8 78 2v38c-26-8-52-8-78-2z" fill="#b02a20" stroke="#e0b56a" stroke-width="1.5"/>
+          <path d="M44 -66l3 8 9 1-7 6 2 9-7-5-7 5 2-9-7-6 9-1z" fill="#e9c46a"/>
+        </g>
+      </defs>
+      <rect width="800" height="450" fill="url(#sky-${u})"/>
+      <circle cx="400" cy="290" r="250" fill="url(#sun-${u})"/>
+      <g fill="#f1cf9a" opacity=".22"><ellipse cx="160" cy="90" rx="150" ry="26"/><ellipse cx="620" cy="120" rx="180" ry="30"/></g>
+      <path d="M0 300c110-40 210-24 320-34s230-28 480 10v174H0z" fill="url(#loess-${u})"/>
+      <path d="M0 356c130-28 220-6 330-16s250-18 470 12v98H0z" fill="#9a683d" opacity=".7"/>
+      <g fill="#6f4a2b" opacity=".5">
+        <path d="M0 390c120-16 220 6 330-4s240-10 470 8v56H0z"/>
+      </g>
+      <g fill="#3a2a1c">
+        <path d="M70 388c24-24 66-24 92 0l-6 28H58z"/><circle cx="92" cy="368" r="17"/>
+        <path d="M170 396c22-22 60-22 84 0l-6 26H158z"/><circle cx="190" cy="378" r="15"/>
+        <path d="M272 388c24-24 66-24 92 0l-6 28H260z"/><circle cx="294" cy="368" r="17"/>
+        <path d="M566 388c24-24 66-24 92 0l-6 28H554z"/><circle cx="588" cy="368" r="17"/>
+        <path d="M664 396c22-22 60-22 84 0l-6 26H652z"/><circle cx="684" cy="378" r="15"/>
+        <path d="M740 390c20-20 54-20 76 0l-6 26H730z"/><circle cx="758" cy="374" r="14"/>
+      </g>
+      <use href="#flag-${u}" transform="translate(148 364) scale(.9)"/>
+      <use href="#flag-${u}" transform="translate(232 340) scale(1.05)"/>
+      <use href="#flag-${u}" transform="translate(330 372) scale(.86)"/>
+      <use href="#flag-${u}" transform="translate(618 352) scale(.95)"/>
+      <use href="#flag-${u}" transform="translate(700 376) scale(.8)"/>
+      <g stroke="#3a2a1c" stroke-width="3" stroke-linecap="round">
+        <path d="M120 350l-12-58M206 340l-8-62M360 356l-10-54M646 342l-8-58M724 360l-12-50"/>
+      </g>
+      <g transform="translate(400 330)">
+        <path d="M-38 0h76l-8 -92h-60z" fill="#a87b4e" stroke="#5f4128" stroke-width="3"/>
+        <path d="M-42 0h84v14h-84z" fill="#7d5836"/>
+        <text x="0" y="-42" text-anchor="middle" font-family="STSong, SimSun, serif" font-size="34" font-weight="700" fill="#f0d39b" letter-spacing="4">会师</text>
+        <path d="M0 -80l4 10 11 1-8 7 2 11-9-6-9 6 2-11-8-7 11-1z" fill="#b02a20"/>
+      </g>
+      <g fill="#3a2a1c">
+        <path d="M380 372c14-10 32-10 46 0l-4 16h-38z"/><circle cx="402" cy="360" r="10"/>
+        <path d="M430 380c12-8 28-8 40 0l-4 14h-32z"/><circle cx="450" cy="370" r="8"/>
+      </g>
+      <path d="M0 430h800v20H0z" fill="#4a2d17" opacity=".6"/>
+    `;
+  } else {
+    scene = `<rect width="800" height="450" fill="#1a100c"/>`;
+  }
+  return `<svg class="artifact-art" viewBox="0 0 800 450" preserveAspectRatio="xMidYMid slice" role="img" aria-label="${artifact.imageDesc}"><title>${artifact.name}</title>${scene}${vignette}</svg>`;
+}
 function artifactDetailHTML(artifact) {
   if (!artifact) {
-    return `<div class="archive-empty"><div><div class="lock-big">锁</div>尚未解锁任何史料<br>完成每一关的主线与支线事件，即可将史料收入馆中。</div></div>`;
+    return `<div class="archive-empty"><div><div class="lock-big">藏</div>尚未拾取任何藏品<br>走进沙盘上的金色藏品点位，即可拾取手记与信物。</div></div>`;
   }
+  const index = ARTIFACTS.findIndex(a => a.id === artifact.id) + 1;
+  const typeEn = artifact.type === '战地手记' ? 'FIELD NOTES' : 'RELIC';
   return `
     <div class="artifact-hero">
       <div>
-        <div class="a-kicker">史料藏品 · ${artifact.stage}</div>
+        <div class="a-kicker">${artifact.type} · ${artifact.stage}</div>
         <h2>${artifact.name}</h2>
-        <p class="a-stage-name">${artifact.era}</p>
+        <p class="a-stage-name">第 ${String(index).padStart(2, '0')} 件藏品 · 拾取点位：${artifact.place}</p>
       </div>
-      <div class="artifact-emblem"><div><span>${artifact.emblem}</span><small>LONG MARCH</small></div></div>
+      <div class="artifact-emblem"><div><span>${artifact.emblem}</span><small>${typeEn}</small></div></div>
     </div>
+    ${artifactFigureHTML(artifact)}
     <div class="artifact-sections">
       <div class="a-section">
-        <div class="a-section-label">史实<small>HISTORY</small></div>
-        <p>${artifact.history}</p>
+        <div class="a-section-label">正文<small>BODY</small></div>
+        <p class="artifact-body">${artifact.body}</p>
       </div>
       <div class="a-section">
-        <div class="a-section-label">战略<small>STRATEGY</small></div>
-        <p>${artifact.strategy}</p>
+        <div class="a-section-label">留白<small>BLANK</small></div>
+        <p class="artifact-line">${artifact.line}</p>
       </div>
       <div class="a-section">
-        <div class="a-section-label">精神<small>SPIRIT</small></div>
-        <p>${artifact.spirit}</p>
+        <div class="a-section-label">点位<small>LOCATION</small></div>
+        <p>${artifact.stage} · ${artifact.place}</p>
       </div>
     </div>
   `;
@@ -6355,30 +6989,32 @@ function openArchive(options = {}) {
   initAudioOnGesture();
   audio.setScene('qa');
   archiveFromFinale = !!options.returnToFinale;
-  const fromArtifact = !!options.returnToArtifact;
+  const fromLevelComplete = !!options.returnToLevelComplete;
   const unlocked = ARTIFACTS.filter(a => state.unlocked.includes(a.id));
   let selected = unlocked.length ? unlocked[unlocked.length - 1] : null;
-  const returnLabel = archiveFromFinale ? '返回评价' : fromArtifact ? '返回史料入藏' : '返回沙盘';
+  const returnLabel = archiveFromFinale ? '返回评价' : fromLevelComplete ? '返回关卡' : '返回沙盘';
+  const notes = ARTIFACTS.filter(a => a.type === '战地手记').length;
+  const relics = ARTIFACTS.length - notes;
   const html = `
     <article class="panel archive-panel" role="dialog" aria-modal="true" aria-labelledby="archiveTitle">
       <header class="panel-head archive-head">
         <div>
           <div class="kicker left" style="margin-bottom:7px">长征史料展览馆</div>
           <h2 id="archiveTitle">七件藏品 · 二万五千里</h2>
-          <p>每一件藏品，都是一次选择留下的回声。已解锁 ${unlocked.length} / 7 件。</p>
+          <p>战地手记 ${notes} 件 · 遗落信物 ${relics} 件，散落在长征沙盘上。已拾取 ${unlocked.length} / ${ARTIFACTS.length} 件。</p>
         </div>
         <button class="panel-close" id="archiveClose" type="button" aria-label="关闭">×</button>
       </header>
       <div class="archive-layout">
         <aside class="archive-side">
-          <div class="archive-side-title"><b>藏品目录</b><span>${unlocked.length}/7 已入藏</span></div>
+          <div class="archive-side-title"><b>藏品目录</b><span>${unlocked.length}/${ARTIFACTS.length} 已入藏</span></div>
           <div class="archive-list" id="archiveList">
             ${ARTIFACTS.map((a, i) => {
               const isUnlocked = state.unlocked.includes(a.id);
               return `<button class="artifact-item ${isUnlocked ? '' : 'locked'} ${selected && selected.id === a.id ? 'active' : ''}" type="button" data-artifact="${a.id}" data-unlocked="${isUnlocked}">
                 <span class="a-no">0${i + 1}</span>
-                <span class="a-info"><span class="a-name">${isUnlocked ? a.name : '未解锁藏品'}</span><span class="a-stage">${a.stage}</span></span>
-                <span class="a-lock">${isUnlocked ? '藏' : '锁'}</span>
+                <span class="a-info"><span class="a-name">${isUnlocked ? a.name : '未拾取藏品'}</span><span class="a-stage">${a.stage}</span></span>
+                <span class="a-lock">${isUnlocked ? '藏' : '未'}</span>
               </button>`;
             }).join('')}
           </div>
@@ -6388,7 +7024,7 @@ function openArchive(options = {}) {
         </section>
       </div>
       <div class="archive-foot">
-        <span class="archive-tip">史料内容依据公开党史资料整理，部分情境为教学化叙述。</span>
+        <span class="archive-tip">藏品为可选收集，不影响主线剧情、问答选项与关卡推进。内容依据公开党史资料整理。</span>
         <button class="btn" id="archiveBack" type="button">${returnLabel}</button>
       </div>
     </article>
@@ -6399,8 +7035,8 @@ function openArchive(options = {}) {
       if (archiveFromFinale) {
         archiveFromFinale = false;
         showFinale();
-      } else if (fromArtifact) {
-        openArtifactUnlock(getLevel());
+      } else if (fromLevelComplete) {
+        openLevelComplete(getLevel());
       } else {
         audio.setScene('map');
         updateHUD();
@@ -6416,7 +7052,7 @@ function openArchive(options = {}) {
       if (!artifact) return;
       if (!state.unlocked.includes(artifact.id)) {
         audio.sfx('wrong');
-        toast(`该藏品尚未解锁 · 通关【${artifact.stage.split(' · ')[0]}】可解锁`, 'danger');
+        toast(`该藏品尚未拾取 · 前往【${artifact.stage}】沙盘，在【${artifact.place}】寻找`, 'danger');
         return;
       }
       selected = artifact;
@@ -6450,9 +7086,6 @@ function showFinale() {
   }
   state.screen = 'finale';
   state.finished = true;
-  if (state.unlocked.length < ARTIFACTS.length) {
-    state.unlocked = ARTIFACTS.map(a => a.id);
-  }
   saveGame();
   $('#homeScreen').hidden = true;
   $('#gameScreen').hidden = true;
@@ -6487,10 +7120,13 @@ function showFinale() {
           <div class="final-resources">${resourcesHTML}</div>
         </section>
         <section class="finale-collection">
-          <h3>史料展览馆 · 全部入藏</h3>
-          <p>七件藏品对应七个历史坐标。点击“查看全部史料”可重新阅读史实、战略与精神解读。</p>
+          <h3>信物藏品 · ${state.unlocked.length}/${ARTIFACTS.length}</h3>
+          <p>手记与信物散落在长征路上。未拾取的藏品不会影响推演评价，可随时在史料馆重读已拾取内容。</p>
           <div class="finale-artifacts">
-            ${ARTIFACTS.map((a, i) => `<div class="fa-item"><span class="fa-no">0${i + 1}</span><span class="fa-name">${a.name}</span><span class="fa-mark">藏</span></div>`).join('')}
+            ${ARTIFACTS.map((a, i) => {
+              const got = state.unlocked.includes(a.id);
+              return `<div class="fa-item ${got ? '' : 'missing'}"><span class="fa-no">0${i + 1}</span><span class="fa-name">${got ? a.name : '未拾取藏品'}</span><span class="fa-mark">${got ? '藏' : '未拾'}</span></div>`;
+            }).join('')}
           </div>
         </section>
       </div>
@@ -6552,9 +7188,6 @@ function finishEnding() {
   }
   $('#endingScreen').hidden = true;
   state.finished = true;
-  if (state.unlocked.length < ARTIFACTS.length) {
-    state.unlocked = ARTIFACTS.map(a => a.id);
-  }
   saveGame();
   updateHUD();
   showFinale();
@@ -6583,7 +7216,7 @@ function bindGlobalEvents() {
   $('#clearSaveBtn').addEventListener('click', () => {
     confirmDialog({
       title: '清除本地存档',
-      text: '将删除关卡进度、资源数值与已解锁史料。此操作无法撤销，确定清除吗？',
+      text: '将删除关卡进度、资源数值与已拾取藏品。此操作无法撤销，确定清除吗？',
       confirmText: '确认清除',
       onConfirm: clearSave
     });
@@ -6625,6 +7258,9 @@ function bindGlobalEvents() {
     } else if (overlayKind === 'archive') {
       event.preventDefault();
       closeOverlay({ runCloseAction: true });
+    } else if (overlayKind === 'pickup') {
+      event.preventDefault();
+      closeOverlay();
     } else if (overlayKind === 'confirm') {
       event.preventDefault();
       closeOverlay();
@@ -6637,7 +7273,7 @@ function bindGlobalEvents() {
   overlayRoot.addEventListener('click', event => {
     if (!event.target.classList.contains('overlay-backdrop')) return;
     if (overlayKind === 'archive') closeOverlay({ runCloseAction: true });
-    else if (overlayKind === 'pause' || overlayKind === 'help' || overlayKind === 'confirm') closeOverlay();
+    else if (overlayKind === 'pause' || overlayKind === 'help' || overlayKind === 'pickup' || overlayKind === 'confirm') closeOverlay();
   });
   window.addEventListener('resize', () => {
     resizeMapCanvas();
@@ -6695,6 +7331,11 @@ window.__CZ__ = {
   get state() { return state; },
   levels: LEVELS,
   artifacts: ARTIFACTS,
+  collectibles: COLLECTIBLES,
+  collectArtifact,
+  openPickup,
+  mapRuntime,
+  updateMap,
   audio,
   beginNewGame,
   continueGame,
